@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bobrov Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://vitaliy-bobrov.github.io/"/>
+  <updated>2016-12-17T13:43:59.000Z</updated>
+  <id>https://vitaliy-bobrov.github.io/</id>
+  
+  <author>
+    <name>Vitaliy Bobrov</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tasks from Interviews - Yandex</title>
+    <link href="https://vitaliy-bobrov.github.io/tasks/tasks-from-interviews-yandex/"/>
+    <id>https://vitaliy-bobrov.github.io/tasks/tasks-from-interviews-yandex/</id>
+    <published>2016-12-17T13:42:13.000Z</published>
+    <updated>2016-12-17T13:43:59.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Tasks" scheme="https://vitaliy-bobrov.github.io/categories/tasks/"/>
+    
+    
+      <category term="JavaScript" scheme="https://vitaliy-bobrov.github.io/tags/javascript/"/>
+    
+      <category term="Interviews" scheme="https://vitaliy-bobrov.github.io/tags/interviews/"/>
+    
+  </entry>
+  
+</feed>
