@@ -1,675 +1,142 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <!-- Title -->
-    
-    <title>
-        Bobrov Blog
-    </title>
-    
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-    
-    <!-- Meta & INfo -->
+<!doctype html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>Bobrov Blog</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="Vitaliy Bobrov">
-    <meta name="description" content="Blog about programming, but no only...">
-    <meta name="keywords" content="null">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Blog about programming, but not only...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
     
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
     
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="">
     
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Bobrov Blog">
+    <meta name="apple-mobile-web-app-title" content="">
     
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://vitaliy-bobrov.github.io">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Bobrov Blog">
-    <meta property="og:description" content="Blog about programming, but no only...">
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
     
-     <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-        
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
-    <![endif]-->
     
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-	body, html{
-		font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-	}
-	
-    a{
-        color: #00838F
-    }
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
     
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #0097A7 !important
-    }
-    
-	/* Sidebar User Drop Down Menu Text Color */
-	#scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus{
-        color: #0097A7 !important
-    }
-    
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a{
-        color: #0097A7 !important
-    }
-    
-    .toTop{
-        background: #757575 !important
-    }
-		
-	.material-layout .material-post>.material-nav,
-	.material-layout .material-index>.material-nav,
-	.material-nav a{
-		color: #757575;
-	}
-		
-	#scheme-Paradox .MD-burger-layer {
-		background-color: #757575;
-	}
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#00bcd4">
 
-	#scheme-Paradox #post-toc-trigger-btn{
-		color: #757575;
-	}
-	
-	.post-toc a:hover{
-		color: #00838F;
-		text-decoration: underline;
-	}
-</style>
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="/manifest.json">
 
-
-<!-- Theme Background Related-->
-
-    <style>
-        body{
-            background-color: #F5F5F5
-        }
-		
-		/* blog_info bottom background */
-        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-            background-color: #fff;
-        }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
-
-        .fade.out{
-            opacity: 0;
-        }
-    </style>
-
-	<script src="/js/jquery.min.js"></script>
-	
-	<link rel="stylesheet" href="/css/highlight/solarized-white.css">
-	
-	<!-- UC Browser Compatible-->
-	<script>
-		var agent = navigator.userAgent.toLowerCase();
-		if(agent.indexOf('ucbrowser')>0) {
-			document.write('<link rel="stylesheet" href="/css/uc.css">');
-		   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-		}
-	</script>
-    
-    <!-- Custom Head -->
-    
-</head>
-	
-	
-
-    <body id="scheme-Paradox">
-
-		
-        <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-				
-			
-			
-            <!-- Main Container -->
-            <main class="material-layout__content" id="main">
-				
-                <!-- Top Anchor -->
-                <div id="top"></div>
-				
-				
-                <!-- Hamburger Button -->
-                <button class="MD-burger-icon sidebar-toggle">
-                    <span class="MD-burger-layer"></span>
-                </button>
-				
-				
-                <!-- Index Module -->
-
-<div class="material-index mdl-grid">
-	
-		<!-- Paradox Header -->
-		<!-- Daily pic -->
-<div class="mdl-card daily-pic mdl-cell mdl-cell--8-col index-top-block">
-    
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">Hi, nice to meet you</a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/avatar.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Vitaliy Bobrov</strong>
-        </div>
-    </div>
-</div>
-
-		<!-- Blog info -->
-<div class="mdl-card something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-	
-    <!-- Search -->
-	
-	<!-- Google -->
-	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-		<label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-			<i class="material-icons mdl-color-text--white" role="presentation">search</i>
-		</label>
-
-		<form id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-			<input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-			<label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-			
-			<input type="hidden" name="sitesearch" value="https://vitaliy-bobrov.github.io">
-		</form>
-	</div>
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="null">
-            <img src="/img/logo.png" alt="logo" />
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>Bobrov Blog</strong>
-        </div>
-        <div class="section-spacer"></div>
-        
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-        </ul>
-        
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-            
-            
-            <a class="index_share-link" href="https://twitter.com/intent/tweet?text=Bobrov Blog&url=https://vitaliy-bobrov.github.io/&via=Vitaliy Bobrov" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Share to Twitter
-                </li>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900&amp;subset=cyrillic">
+    <link rel="stylesheet" href="/css/styles.css">
+  <meta property="og:site_name" content="Bobrov Blog"><meta property="og:type" content="website"><meta property="og:title" content="Bobrov Blog"><meta property="og:description" content="Blog about programming, but not only..."><meta property="og:image" content=""></head>
+  <body class="mdlext-dark-color-theme">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+      <defs>
+          <svg viewbox="0 0 24 24" id="expand-less"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
+          <svg viewbox="0 0 478.6 478.6" id="github"><path d="M427.5 200.7c1.8-11.2 3-23.6 3.2-37.4 0-59.2-28.5-80.2-34-90 8-45-1.3-65.3-5.6-72.3-16-5.7-56 14.7-77 29-36-10.2-111-9.2-139 3C123-4.4 95.6 1.3 95.6 1.3s-18 31.7-5 78.3c-17 21.8-29.7 37.2-29.7 78 0 9.8 0 19 1 28C77 262.8 138 296.2 198 302c-9 6.3-19.7 19.3-21.2 35-11.4 7-34.3 9.2-52 4-25-8-34.6-57.7-72-50-8 1-6.4 6.2.6 11 11.3 7 22 16.3 30.2 36 6.2 15 19.5 42 62 42 16.5 0 28.2-2 28.2-2l.3 53.3c0 17.3-23 22-23 30.4 0 3.3 7.7 3.6 13.8 3.6 12.4 0 37.8-10.2 37.8-28V367c0-18.2 10-24 10-24s1 97.7-2.4 110.8c-4.2 15.3-12 13-12 20 0 10.2 30.8 2.5 41-20 8-17 4.5-112.8 4.5-112.8l8.2-.2s0 44-.3 64c-.3 20.7-2.4 47 10 59.3 8 8 32.8 23 32.8 10 0-7.5-17.4-14-17.4-34.3V345c10.6 0 12.8 31 12.8 31l3.8 57.7s-2.5 21 22.7 30c9 3 28 4 29-1.4 1-5.2-23-13-23-29.3 0-10 .5-16 .5-59s-5.7-59-26-72c58.7-6 119.5-32.2 130.5-101z"/></svg>
+          <svg viewbox="0 0 612 612" id="twitter"><path d="M612 116.3c-22.5 10-46.7 16.7-72 19.7 25.8-15.5 45.7-40 55-69.4C571 81 544 91.4 515.4 97c-23-24.3-55.5-39.6-91.6-39.6C354.4 57.4 298 113.7 298 183c0 9.8 1.2 19.4 3.4 28.6C197 206.3 104.6 156.3 42.6 80.4c-10.8 18.5-17 40-17 63 0 43.6 22.2 82 56 104.6-20.7-.7-40-6.4-57-15.8v1.6c0 60.8 43.3 111.5 100.7 123-10.5 3-21.6 4.5-33 4.5-8.2 0-16-.8-23.7-2.4 16 50 62.3 86 117.3 87-43 34-97.4 54-156 54-10.3 0-20.3-.7-30-1.8C55.5 534 121.4 555 192.3 555c231 0 357.2-191.4 357.2-357.3l-.4-16.3c24.7-17.5 46-39.6 62.8-64.7z"/></svg>
+      </defs>
+    </svg>
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header mdl-layout--fixed-header is-casting-shadow" role="banner">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Bobrov Blog</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer">
+            <a href="/" class="bb-site-logo" title="Bobrov Blog">
+              <picture class="bb-site-logo__picture">
+                <img src="/images/logo.png" alt="Bobrov Blog Logo" class="bb-site-logo__img">
+              </picture>
             </a>
-            <a class="index_share-link" href="https://plus.google.com/share?url=https://vitaliy-bobrov.github.io/" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Share to Google+
-                </li>
-            </a>
-            <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Bobrov Blog&url=https://vitaliy-bobrov.github.io/&pic=&searchPic=false&style=simple" target="_blank">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    Share to Weibo
-                </li>
-            </a>
-        </ul>
-    </div>
-</div>
-
-	
-    <div class="locate-thumbnail-symbol"></div>
-    
-    
-		
-			<!-- Paradox Thumbnail -->
-        	<div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    
-    <!-- Post Thumbnail -->
-	
-		
-			<!-- Random Thumbnail -->
-			<div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-		
-	
-				
-		<!-- Post Title -->
-		<p class="article-headline-p"><a href="/tasks/tasks-from-interviews-yandex/">Tasks from Interviews - Yandex</a></p>
-	</div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/tasks/tasks-from-interviews-yandex/" target="_self">Continue Reading</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Vitaliy Bobrov's avatar">
-            </div>
-            <div>
-                <strong>Vitaliy Bobrov</strong>
-                <span>Dec 17, 2016</span>
-            </div>
+          </div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="/">&#x411;&#x43B;&#x43E;&#x433;</a>
+            <!-- <a class="mdl-navigation__link" href="/categories">Categories</a>
+            <a class="mdl-navigation__link" href="/about">About</a> -->
+          </nav>
         </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/tasks/">Tasks</a>
-            </span>
-            
-            
-            
-            <!-- Post Views -->
-            <span class="post_entry-views">
-                
-            </span>
-        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="mdl-layout__content js-to-top-container">
+        <section class="mdl-grid posts-grid">
+            <article class="mdl-card mdl-shadow--2dp mdl-cell post-teaser mdl-cell--12-col-desktop">
+              <header class="mdl-card__media post-teaser__media">
+                <h2 class="post-teaser__title">
+                  <a href="blog/tasks-from-interviews-yandex" class="post-teaser__title-link">&#x417;&#x430;&#x434;&#x430;&#x447;&#x438; &#x43D;&#x430; &#x441;&#x43E;&#x431;&#x435;&#x441;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; - Yandex</a>
+                </h2>
+              </header>
+
+              <section class="post-teaser__info post-info">
+                <div class="post-info__data">
+                  <img src="https://avatars.githubusercontent.com/vitaliy-bobrov?size=48" alt="Vitaliy Bobrov Avatar" class="post-info__avatar user-avatar">
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitaliy Bobrov
+                    </div>
+                      <time date-time="2016-12-25T04:58:29+01:00" class="post-info__date">
+                        25 &#x434;&#x435;&#x43A;&#x430;&#x431;&#x440;&#x44F; 2016
+                      </time>
+                  </div>
+                </div>
+
+                <div class="post-info__categories">
+                    <span class="mdl-badge">&#x417;&#x430;&#x434;&#x430;&#x447;&#x438;</span>
+                </div>
+              </section>
+
+              <section class="mdl-card__supporting-text post-teaser__intro">
+                <p class="post-teaser__intro-text"></p>
+
+                <a href="blog/tasks-from-interviews-yandex" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                  &#x427;&#x438;&#x442;&#x430;&#x442;&#x44C; &#x434;&#x430;&#x43B;&#x435;&#x435;
+                </a>
+              </section>
+            </article>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer role="contentinfo" class="mdl-mini-footer">
+        <a href="#top" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--fab mdl-button--mini-fab to-top js-to-top">
+          <svg class="mdl-svg to-top__icon">
+            <use xlink:href="#expand-less"/>
+          </svg>
+        </a>
+        <section class="mdl-mini-footer--left-section">
+          <a href="authors.me.twitter" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use xlink:href="#twitter"/>
+              </svg>
+             </a>
+          <a href="authors.me.github" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use xlink:href="#github"/>
+              </svg>
+             </a>
+        </section>
+        <section class="mdl-copyright">
+          <p>Copyright &#xA9; 2017 Bobrov Blog</p>
+        </section>
+        <section class="mdl-mini-footer--right-section">
+          <p>Generated with <a href="http://metalsmith.io/" target="_blank" rel="nofollow">Metalsmith</a></p>
+        </section>
+      </footer>
     </div>
-            
-</div>
 
-		
-		
-    
-    
-	
-		<script>
-    
-    var randomNum;
-    
-    var locatePost = $(".locate-thumbnail-symbol").next();
-    for(var i=0; i < 10; i++){
-        
-        randomNum = Math.floor(Math.random() * 5 + 1);
-        
-        locatePost.children(".post_thumbnail-random").attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children(".post_thumbnail-random").css('background-image', 'url(' + '/img/random/' + randomNum + '.png' + ')')
-        
-        locatePost = locatePost.next();
-    }
-    
-</script>
-
-	
-
-</div>
-
-				
-				
-					<!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay "></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored  sidebar-fixed-left" role="navigation">
-	<div id="sidebar-main">
-	    <!-- Sidebar Header -->
-		<div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-    <i class="material-icons">clear_all</i>
-    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Vitaliy Bobrov's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        youremail@email.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-		<!-- Sidebar Navigation  -->
-		<ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-			
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-						<i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    <li id="sidebar-first-li">
-        <a href="/" target="_self">
-            <i class="material-icons sidebar-material-icons">home</i>
-             Home
-        </a>
-    </li>
-
-    <!-- I'm Feeling Lucky -->
-<!--
-    <li class="dropdown">
-        <a href="" target="_self">
-            <i class="material-icons sidebar-material-icons">explore</i>
-             sidebar.imlucky
-        </a>
-    </li>
--->
-
-	
-    <!-- Archives  -->
-    <li class="dropdown">
-        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons sidebar-material-icons">inbox</i>
-             Archives
-            <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-            <li>
-            <a class="sidebar_archives-link" href="/archives/2016/12/">December 2016<span class="sidebar_archives-count">1</span></a>
-        </ul>
-    </li>
-
-    <!-- Divider -->
-    <li class="divider"></li>
-
-
-    <!-- Pages  -->
-	
-
-    <!-- Article Numebr  -->
-    <li>
-        <a href="/archives">
-             Article Number
-             <span class="sidebar-badge">1</span>
-        </a>
-    </li>
-</ul>
-
-		<!-- Sidebar Divider -->
-		<div class="sidebar-divider"></div>
-
-		<!-- Sidebar Footer -->
-		<!-- 
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持。 :) 
--->
-
-<!-- Theme Material -->
-<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-	<div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		Theme - Material
-		<span class="sidebar-badge badge-circle">i</span>
-	</div>
-</a>
-
-<!-- Help & Support -->
-<!--
-<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-		sidebar.help
-		<span class="mdl-button__ripple-container">
-			<span class="mdl-ripple"></span>
-		</span>
-	</div>
-</a>
--->
-
-<!-- Feedback -->
-<!--
-<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.feedback
-                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>
--->
-
-<!-- Abount Theme -->
-<!--
-<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
-    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-         sidebar.about_theme
-        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
-</a>-->
-
-	</div>
-    
-    <!-- Sidebar Sponsor -->
-    
-
-
-</aside>
-
-				
-				
-				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-				
-				
-				<!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-	
-	
-		<!-- Paradox Footer Left Section -->
-		<div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-    <a href="https://twitter.com/twitter" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-        <span class="visuallyhidden">Twitter</span>
-    </button></a>
-    
-    
-    <!-- Facebook -->
-    
-    <a href="https://www.facebook.com/facebook" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
-        <span class="visuallyhidden">Facebook</span>
-    </button></a>
-    
-    
-    <!-- Google + -->
-    
-    <a href="https://www.google.com/" target="view_window"><button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-        <span class="visuallyhidden">Google Plus</span>
-    </button></a>
-    
-    
-    <!-- Weibo -->
-    
-    
-    
-    <!-- Instagram -->
-    
-    
-    
-    <!-- Tumblr -->
-    
-    
-    
-    <!-- Github -->
-    
-    
-</div>
-
-
-		<!--Copyright-->
-		<div id="copyright">Copyright&nbsp;©&nbsp;<script type="text/javascript">var fd = new Date();document.write(fd.getFullYear());</script>&nbsp;Bobrov Blog</div>
-
-		<!-- Paradox Footer Right Section -->
-
-		<!-- 
-		I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-		It will not impact the appearance and can give developers a lot of support :)
-
-		很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-		它不会影响美观并可以给开发者很大的支持。 :) 
-		-->
-
-		<div class="mdl-mini-footer--right-section">
-			<div>
-				<div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-				<div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-			</div>
-		</div>
-	
-    
-</footer>
-                
-				<!-- Import File -->
-<script src="/js/highlight.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
-    
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Swiftye -->
-
-
-<!-- Local Search-->
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
-    });
-</script>
-
-<!-- MathJax Load-->
-
-            </main>
-        </div>
-		
-    </body>
-		
-	
+    <!-- Scripts -->
+    <script src="/js/main.min.js" defer></script>
+  </body>
 </html>
