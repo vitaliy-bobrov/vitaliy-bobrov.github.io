@@ -95,8 +95,9 @@
       
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="/">Blog</a>
+            <a class="mdl-navigation__link " href="/">Blog</a>
       
+              <a class="mdl-navigation__link " href="/about/">About</a>
           </nav>
         </div>
       </header>
@@ -105,6 +106,7 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="/">Blog</a>
       
+            <a class="mdl-navigation__link" href="/about/">About</a>
         </nav>
       </div>
 

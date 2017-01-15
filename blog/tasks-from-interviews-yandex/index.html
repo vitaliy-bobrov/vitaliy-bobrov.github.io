@@ -88,8 +88,9 @@
       
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="/">Blog</a>
+            <a class="mdl-navigation__link " href="/">Blog</a>
       
+              <a class="mdl-navigation__link " href="/about/">About</a>
           </nav>
         </div>
       </header>
@@ -98,6 +99,7 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="/">Blog</a>
       
+            <a class="mdl-navigation__link" href="/about/">About</a>
         </nav>
       </div>
 
@@ -137,7 +139,7 @@
                       Vitaliy Bobrov
                     </div>
 
-                      <time date-time="2017-01-15T05:44:40+01:00" class="post-info__date">
+                      <time date-time="2017-01-15T09:39:39+01:00" class="post-info__date">
                         15 January 2017
                       </time>
 
@@ -248,7 +250,7 @@ isPalindrome(<span class="hljs-string">'Was it a cat I saw?'</span>); <span clas
 isPalindrome(<span class="hljs-string">'Do geese see God?'</span>);   <span class="hljs-comment">// true</span>
 isPalindrome(<span class="hljs-string">'programmer'</span>);          <span class="hljs-comment">// false</span>
 </code></pre>
-<p>This one is the simple one. We need to convert a string to one case, remove all special characters and then compare with its reversed version. In my case, I decided to convert a string to lower case. Then I lived only letter characters in it. And finally convert it to <code class="lang-js"><span class="hljs-built_in">Array</span></code>, reverse and convert back to <code class="lang-js"><span class="hljs-built_in">String</span></code>. Here is resulting function:</p>
+<p>This one is the simple one. We need to convert a string to one case, remove all special characters and then compare with its reversed version. In my case, I decided to convert a string to lower case. Then I leaved only letter characters in it. And finally convert it to <code class="lang-js"><span class="hljs-built_in">Array</span></code>, reverse and convert back to <code class="lang-js"><span class="hljs-built_in">String</span></code>. Here is resulting function:</p>
 <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPalindrome</span>(<span class="hljs-params">text</span>) </span>{
   text = text.toLowerCase().replace(<span class="hljs-regexp">/[^a-zA-Z]/g</span>, <span class="hljs-string">''</span>);
 
