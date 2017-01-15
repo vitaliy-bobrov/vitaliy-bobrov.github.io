@@ -35,7 +35,7 @@
 
     <meta property="fb:app_id" content="393821434298248">
     <meta property="article:author" content="">
-    <meta property="og:url" content="https://vitaliy-bobrov.github.io/browserconfig.xml/" />
+    <meta property="og:url" content="https://vitaliy-bobrov.github.io/robots.txt/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="Blog about web development, but not only..." />
@@ -159,15 +159,14 @@
               </section>
 
               <section class="post__contents">
-                <?xml version="1.0" encoding="utf-8"?>
-<browserconfig>
-  <msapplication>
-    <tile>
-      <square150x150logo src="/mstile-150x150.png"/>
-      <TileColor>#00a300</TileColor>
-    </tile>
-  </msapplication>
-</browserconfig>
+                # www.robotstxt.org/
+
+# Allow crawling of all content
+User-agent: *
+Disallow:
+
+User-agent: Twitterbot
+Disallow:
 
               </section>
           </article>
