@@ -55,7 +55,10 @@ plugins: [
     {
       test: <span class="hljs-regexp">/\.(scss|sass)$/</span>,
       use: [
-        ExtractTextPlugin.extract(<span class="hljs-string">'style-loader'</span>),
+        ExtractTextPlugin.extract({
+          fallbackLoader: <span class="hljs-string">'style-loader'</span>,
+          loader: <span class="hljs-string">'style-loader'</span>
+        }),
         {
           loader: <span class="hljs-string">'css-loader'</span>,
           options: {
