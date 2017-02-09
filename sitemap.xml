@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url> <loc>https://vitaliy-bobrov.github.io/index.html</loc> <changefreq>always</changefreq> <priority>1.0</priority> </url>
-<url> <loc>https://vitaliy-bobrov.github.io/blog/adding-comments-to-metalsmith/index.html</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/about/index.html</loc> <priority>0.8</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/five-reasons-choose-metalsmith/index.html</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/blog/adding-comments-to-metalsmith/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/hello-world/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/tasks-from-interviews-yandex/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/webpack-2-migration-tips/index.html</loc> </url>
-<url> <loc>https://vitaliy-bobrov.github.io/about/index.html</loc> <priority>0.8</priority> </url>
 </urlset>
