@@ -258,5 +258,5 @@ toolbox.router.get(/\/blog\/.*/, toolbox.fastest, {"cache":{"maxEntries":100,"na
 
 
 
-importScripts("js/sw/sw-toolbox.js","js/sw/offline-google-analytics-import.js","js/sw/offline-analytics.js","js/sw/runtime-caching.js");
+importScripts("js/sw/sw-toolbox.js","js/sw/offline-google-analytics-import.min.js","js/sw/offline-analytics.js","js/sw/runtime-caching.js");
 
