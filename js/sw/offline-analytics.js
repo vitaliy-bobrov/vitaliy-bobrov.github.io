@@ -1,1 +1,6 @@
-"use strict";!function(i){i.goog.offlineGoogleAnalytics.initialize()}(self);
+/* eslint-env worker, serviceworker */
+(global => {
+  'use strict';
+
+  global.goog.offlineGoogleAnalytics.initialize();
+})(self);
