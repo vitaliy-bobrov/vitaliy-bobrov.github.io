@@ -4,6 +4,7 @@
 <url> <loc>https://vitaliy-bobrov.github.io/blog/page/2/index.html</loc> <changefreq>always</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/adding-comments-to-metalsmith/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/deep-dive-into-array-methods/index.html</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/blog/exploring-the-css-paint-api/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/five-reasons-choose-metalsmith/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/hello-world/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/how-to-start-contribute-to-open-source/index.html</loc> </url>
@@ -18,6 +19,8 @@
 <url> <loc>https://vitaliy-bobrov.github.io/category/metalsmith/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/javascript/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/functional-programming/index.html</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/category/css/index.html</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/category/houdini/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/blog/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/open-source/index.html</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/libraries/index.html</loc> </url>
