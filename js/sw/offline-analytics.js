@@ -1,1 +1,1 @@
-((a)=>{'use strict';a.goog.offlineGoogleAnalytics.initialize()})(self);
+(a=>{"use strict";a.goog.offlineGoogleAnalytics.initialize()})(self);
