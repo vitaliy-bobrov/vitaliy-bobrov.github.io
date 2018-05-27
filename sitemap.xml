@@ -9,11 +9,11 @@
 <url> <loc>https://vitaliy-bobrov.github.io/blog/five-reasons-choose-metalsmith/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/hello-world/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/how-to-start-contribute-to-open-source/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
-<url> <loc>https://vitaliy-bobrov.github.io/blog/native-share-for-mobile-chrome/</loc> <lastmod>2018-04-13</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/introduction-to-functional-js/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/blog/native-share-for-mobile-chrome/</loc> <lastmod>2018-04-13</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/blog/please-no-more-jquery/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/tasks-from-interviews-yandex/</loc> <lastmod>2018-03-11</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/webpack-2-migration-tips/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
-<url> <loc>https://vitaliy-bobrov.github.io/blog/please-no-more-jquery/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/about/</loc> <lastmod>2018-05-16</lastmod> <changefreq>weekly</changefreq> <priority>0.9</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/speaker/</loc> <lastmod>2018-05-25</lastmod> <changefreq>weekly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/guides/</loc> </url>
@@ -24,7 +24,7 @@
 <url> <loc>https://vitaliy-bobrov.github.io/category/functional-programming/</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/blog/</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/open-source/</loc> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/category/libraries/</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/interviews/</loc> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/category/tools/</loc> </url>
-<url> <loc>https://vitaliy-bobrov.github.io/category/libraries/</loc> </url>
 </urlset>
