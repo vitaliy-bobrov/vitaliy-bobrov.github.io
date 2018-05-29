@@ -3,6 +3,7 @@
 <url> <loc>https://vitaliy-bobrov.github.io/</loc> <changefreq>always</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/page/2/</loc> <changefreq>always</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/adding-comments-to-metalsmith/</loc> <lastmod>2018-02-18</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
+<url> <loc>https://vitaliy-bobrov.github.io/blog/css-custom-properties-in-depth/</loc> <lastmod>2018-05-30</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/css-paint-in-action-bar-chart/</loc> <lastmod>2018-04-24</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/deep-dive-into-array-methods/</loc> <lastmod>2018-02-17</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://vitaliy-bobrov.github.io/blog/exploring-the-css-paint-api/</loc> <lastmod>2018-03-27</lastmod> <changefreq>monthly</changefreq> <priority>1.0</priority> </url>
