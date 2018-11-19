@@ -1,1 +1,0 @@
-(a=>{"use strict";a.toolbox.router.get("/(.*)",a.toolbox.fastest,{cache:{name:"googleapis",maxAgeSeconds:31557600},origin:/\.(?:googleapis|gstatic)\.com$/}),a.toolbox.router.get("/(.*)",a.toolbox.fastest,{cache:{name:"disqus",maxAgeSeconds:31557600},origin:/\.(?:disqus|disquscdn)\.com$/})})(self);
