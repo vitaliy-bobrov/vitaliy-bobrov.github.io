@@ -35,6 +35,15 @@
 <span class="token punctuation">}</span>
 </code></pre><p><em>Side note: I&#x2019;ve used TypeScript while working with Web Audio and it saved me much time of searching through the documentation. It is not required to use TypeScript, but I can say it might make your life way easier.</em></p><h2>Request audio stream</h2><p>After we created an audio context, we are ready to request user input with <code>getUserMedia</code> API. In the past, this method was located on <code>navigator</code> object, but the specification was changed, and now it is on <code>navigator.mediaDevices</code>. Keep this in mind if you&#x2019;re going to support legacy browsers.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
   <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>audio<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>By default, browsers might apply sound optimization to the stream &#x2013; echo cancellation, noise suppression, and auto gain control. Those optimizations are suitable for a microphone but not for a live instrument. To disable them, you need to pass an object with audio constraints instead of <code>true</code>:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
+  <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    audio<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      echoCancellation<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      autoGainControl<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      noiseSuppression<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      latency<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre><p>After the call of the method, the user will be asked for permission to allow audio input and output. You can request those permissions manually using <code>Permissions API</code>, but that feature is not fully supported right now. For now, you&#x2019;re allowed to check permission status and reset it.</p><pre class="language-js"><code class="language-js"><span class="token comment">// Getting permission status.</span>
 <span class="token keyword">const</span> micStatus <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>permissions<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&apos;microphone&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -52,7 +61,14 @@ lineInSource<span class="token punctuation">.</span><span class="token function"
 <span class="token punctuation">}</span>
 
 <span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
-  <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>audio<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    audio<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      echoCancellation<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      autoGainControl<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      noiseSuppression<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      latency<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> lineInSource <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createMediaStreamSource</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 lineInSource<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span>destination<span class="token punctuation">)</span><span class="token punctuation">;</span>
