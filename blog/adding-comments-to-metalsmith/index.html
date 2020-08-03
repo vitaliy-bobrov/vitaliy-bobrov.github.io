@@ -1,4 +1,59 @@
-<!doctype html><html lang="en"><head><title>Adding Comments to Metalsmith | Bobrov Dev</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn&#x27;t want to have a database and other back-end infrastructure to implement commenting functionality."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" href="https://bobrov.dev/blog/adding-comments-to-metalsmith/" hreflang="en"><link rel="canonical" href="https://bobrov.dev/blog/adding-comments-to-metalsmith/"><meta name="msapplication-tap-highlight" content="no"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Bobrov Dev"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Bobrov Dev"><meta name="msapplication-TileColor" content="#008ba3"><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16"><meta name="theme-color" content="#008ba3"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"><link rel="stylesheet" href="/css/styles.css"><meta property="fb:app_id" content="393821434298248"><meta property="article:author" content="https://www.facebook.com/bobrov1989"><meta property="og:url" content="https://bobrov.dev/blog/adding-comments-to-metalsmith/"><meta property="og:type" content="article"><meta property="og:title" content="Adding Comments to Metalsmith"><meta property="og:description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn&#x27;t want to have a database and other back-end infrastructure to implement commenting functionality."><meta property="og:image" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg"><meta property="og:image:url" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><script type="application/ld+json">{
+<!DOCTYPE html><html lang="en"><head>
+    <title>Adding Comments to Metalsmith | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn't want to have a database and other back-end infrastructure to implement commenting functionality.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="https://bobrov.dev/blog/adding-comments-to-metalsmith/" hreflang="en">
+    <link rel="canonical" href="https://bobrov.dev/blog/adding-comments-to-metalsmith/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="https://bobrov.dev/blog/adding-comments-to-metalsmith/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Adding Comments to Metalsmith">
+    <meta property="og:description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn't want to have a database and other back-end infrastructure to implement commenting functionality.">
+    <meta property="og:image" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg">
+    <meta property="og:image:url" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "mainEntityOfPage": "True",
@@ -23,59 +78,309 @@
           }
         },
         "description": "Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn&#x27;t want to have a database and other back-end infrastructure to implement commenting functionality."
-      }</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script><script>if (navigator.doNotTrack !== '1') {
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
         gtag('config', 'UA-90372372-1');
-      }</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Adding Comments to Metalsmith"><meta name="twitter:description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn&#39;t want to have a database and other back-end infrastructure to implement commenting functionality."><meta name="twitter:image" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg"><meta name="twitter:image:alt" content="Adding Comments to Metalsmith"></head><body class="mdlext-dark-color-theme mdl-layout__container"><div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout"><header class="mdl-layout__header is-casting-shadow" role="banner"><div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false"><svg class="mdl-svg drawer-icon"><use xlink:href="/images/sprite.svg#menu"/></svg> Menu</div><div class="mdl-layout__header-row"><span class="mdl-layout-title"><a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a></span><div class="mdl-layout-spacer"><a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow"><picture class="site-logo__picture"><source media="(min-width: 1025px)" srcset="/images/logo.webp, /images/logo@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/logo.png, /images/logo@2x.png 2x"><source media="(min-width: 768px)" srcset="/images/logo-tablet.webp, /images/logo-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/logo-tablet.png, /images/logo-tablet@2x.png 2x"><source srcset="/images/logo-mobile.webp, /images/logo-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/logo-mobile.png, /images/logo-mobile@2x.png 2x"><img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img"></picture></a></div><nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Bobrov Dev</span><nav class="mdl-navigation" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About </a><button class="mdl-button mdl-button--raised js-add-to-home" disabled>Add to home screen</button></nav></div><div class="mdl-layout__content js-lazy-container"><main class="mdl-grid posts-grid"><article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col"><header class="mdl-card__media post__media"><picture class="safe-picture"><source media="(min-width: 1025px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.webp, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.jpg, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project@2x.jpg 2x"><source media="(min-width: 768px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet.webp, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet.jpg, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet@2x.jpg 2x"><source srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile.webp, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile.jpg, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile@2x.jpg 2x"><img src="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.jpg" loading="eager" alt="Adding Comments to Metalsmith" class="safe-picture__img"></picture><div class="safe-gradient"></div><h1 class="post__title">Adding Comments to Metalsmith</h1></header><section class="post__info post-info"><div class="post-info__data"><picture class="post-info__avatar"><source srcset="/images/authors/bobrov/avatar.webp, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp"><source srcset="/images/authors/bobrov/avatar.jpg, /images/authors/bobrov/avatar@2x.jpg 2x"><img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar"></picture><div class="post-info__data-wrapper"><div class="post-info__author">Vitalii Bobrov</div><time datetime="2017-01-30" class="post-info__date">30 January 2017</time></div></div><div class="post-info__side"><div class="post-info__categories"><a href="/category/guides" class="mdl-chip post-info__category"><span class="mdl-chip__text">Guides</span> </a><a href="/category/metalsmith" class="mdl-chip post-info__category"><span class="mdl-chip__text">Metalsmith</span></a></div></div></section><div class="mdl-card__menu post-share"><button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Adding Comments to Metalsmith" data-share-text="Adding Comments to Metalsmith by @bobrov1989" data-share-url="https://bobrov.dev/blog/adding-comments-to-metalsmith/"><span class="ripple-ink"></span> <svg class="mdl-svg post-share__icon"><use xlink:href="/images/sprite.svg#share"/></svg> Share post</button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu"><li class="mdl-menu__item share-menu__item"><a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#facebook"/></svg> Facebook</a></li><li class="mdl-menu__item share-menu__item"><a href="https://twitter.com/home?status=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Twitter</a></li><li class="mdl-menu__item share-menu__item"><a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#linkedin"/></svg> LinkedIn</a></li></ul></div><section class="post__contents"><p>Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means (in most cases) that developer doesn&#x2019;t want to have a database and other back-end infrastructure to implement commenting functionality. But it not says that you can&#x2019;t add it.</p><p>Some services provide commenting widgets as a service in web. The most widely-used and famous of them &#x2013; <a href="https://disqus.com/" target="_blank" rel="nofollow noreferrer noopener">Disqus</a>. With it, you will not care about a lot of complicated things related to comments. So what they offer to you:</p><ul><li>Commenting widget</li><li>Real-time comments updates</li><li>Comments counter widget</li><li>Spam filtering</li><li>Moderation tool</li><li>Design adapting to your website</li><li>Media resources support</li></ul><p>The site registration is pretty simple, just visit Disqus <a href="https://disqus.com/profile/signup/intent/" target="_blank" rel="nofollow noreferrer noopener">webpage</a> and follow the instructions.</p><h2>Integrate with Metalsmith</h2><p>Metalsmith was created as flexible as possible, and it has a little core functionality. Any additional feature could be implemented as a plugin. So to simplify Disqus integration I created <a href="https://github.com/vitaliy-bobrov/metalsmith-disqus" target="_blank" rel="nofollow noreferrer noopener">plugin</a> &#x2013; <code>metalsmith-disqus</code>.</p><p class="star-me"><a href="https://github.com/vitaliy-bobrov/metalsmith-disqus" target="_blank" rel="nofollow noreferrer noopener">Star on GitHub</a></p><h3>Installation</h3><p>The installation process is pretty simple, just run the command in your terminal:</p><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save-dev metalsmith-disqus
-</code></pre><h3>Plug into Metalsmith build</h3><p>The plugin needs HTML markup to be already generated for its work because it will look for elements with configured class names and add Disqus scripts, meta tags to your page. So you need to place it after markdown files are processed, for example after <code>metalsmith-layouts</code> plugin:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> Metalsmith <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;metalsmith&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> layouts    <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;metalsmith-layouts&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> disqus     <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;metalsmith-disqus&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Adding Comments to Metalsmith"><meta name="twitter:description" content="Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means that developer doesn&#39;t want to have a database and other back-end infrastructure to implement commenting functionality."><meta name="twitter:image" content="https://bobrov.dev/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-og.jpg"><meta name="twitter:image:alt" content="Adding Comments to Metalsmith"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.webp 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.jpg 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet.webp 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet.jpg 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile.webp 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile.jpg 1x, /images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project-mobile@2x.jpg 2x">
+      <img src="/images/posts/adding-comments-to-metalsmith/add-comments-to-metalsmith-project.jpg" loading="eager" alt="Adding Comments to Metalsmith" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  Adding Comments to Metalsmith
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2017-01-30" class="post-info__date">
+                      30 January 2017
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/guides" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Guides</span>
+                      </a>
+                      <a href="/category/metalsmith" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Metalsmith</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Adding Comments to Metalsmith" data-share-text="Adding Comments to Metalsmith by @bobrov1989" data-share-url="https://bobrov.dev/blog/adding-comments-to-metalsmith/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/adding-comments-to-metalsmith/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>Comments are the vital part of communication with the audience. It fits for a lot type of websites starting from blogs finishing with e-commerce. Metalsmith is a static site generator, that means (in most cases) that developer doesn’t want to have a database and other back-end infrastructure to implement commenting functionality. But it not says that you can’t add it.</p>
+<p>Some services provide commenting widgets as a service in web. The most widely-used and famous of them – <a href="https://disqus.com/" target="_blank" rel="nofollow noreferrer noopener">Disqus</a>. With it, you will not care about a lot of complicated things related to comments. So what they offer to you:</p>
+<ul><li>Commenting widget</li>
+<li>Real-time comments updates</li>
+<li>Comments counter widget</li>
+<li>Spam filtering</li>
+<li>Moderation tool</li>
+<li>Design adapting to your website</li>
+<li>Media resources support</li>
+</ul>
+<p>The site registration is pretty simple, just visit Disqus <a href="https://disqus.com/profile/signup/intent/" target="_blank" rel="nofollow noreferrer noopener">webpage</a> and follow the instructions.</p>
+<h2>Integrate with Metalsmith</h2>
+<p>Metalsmith was created as flexible as possible, and it has a little core functionality. Any additional feature could be implemented as a plugin. So to simplify Disqus integration I created <a href="https://github.com/vitaliy-bobrov/metalsmith-disqus" target="_blank" rel="nofollow noreferrer noopener">plugin</a> – <code>metalsmith-disqus</code>.</p>
+<p class="star-me"><a href="https://github.com/vitaliy-bobrov/metalsmith-disqus" target="_blank" rel="nofollow noreferrer noopener">Star on GitHub</a></p>
+<h3>Installation</h3>
+<p>The installation process is pretty simple, just run the command in your terminal:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> --save-dev metalsmith-disqus
+</code></pre>
+<h3>Plug into Metalsmith build</h3>
+<p>The plugin needs HTML markup to be already generated for its work because it will look for elements with configured class names and add Disqus scripts, meta tags to your page. So you need to place it after markdown files are processed, for example after <code>metalsmith-layouts</code> plugin:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> Metalsmith <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'metalsmith'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> layouts    <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'metalsmith-layouts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> disqus     <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'metalsmith-disqus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
   <span class="token operator">...</span>
   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">layouts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">disqus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    siteurl<span class="token punctuation">:</span> <span class="token string">&apos;my-site.com&apos;</span><span class="token punctuation">,</span>
-    shortname<span class="token punctuation">:</span> <span class="token string">&apos;my-site&apos;</span>
+    siteurl<span class="token punctuation">:</span> <span class="token string">'my-site.com'</span><span class="token punctuation">,</span>
+    shortname<span class="token punctuation">:</span> <span class="token string">'my-site'</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><h3>Required options</h3><p>You need to specify two required configuration options &#x2013; <code>siteurl</code> and <code>shortname</code>. <code>siteurl</code> &#x2013; needed to generate absolute URL for your pages. That is required for proper Disqus widget configuration. <code>shortname</code> is the same name that you received during website registration in Disqus admin. Disqus gives the links to widgets based on your shortname sub-domain. All other options are optional, if not specified plugin will use defaults.</p><h3>Optional configuration</h3><p><code>path</code> - Metalsmith metadata key to finding your page relative path. It is used to generate absolute URL to the page, using <code>path</code> and <code>siteurl</code>. If you are using <code>metalsmith-permalinks</code> plugin you could leave it as default value &#x2013; &apos;path&#x2019;, this plugin adds <code>path</code> property to your content. Otherwise, you may pass own front matter key to the configuration:</p><pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
+</code></pre>
+<h3>Required options</h3>
+<p>You need to specify two required configuration options – <code>siteurl</code> and <code>shortname</code>. <code>siteurl</code> – needed to generate absolute URL for your pages. That is required for proper Disqus widget configuration. <code>shortname</code> is the same name that you received during website registration in Disqus admin. Disqus gives the links to widgets based on your shortname sub-domain. All other options are optional, if not specified plugin will use defaults.</p>
+<h3>Optional configuration</h3>
+<p><code>path</code> - Metalsmith metadata key to finding your page relative path. It is used to generate absolute URL to the page, using <code>path</code> and <code>siteurl</code>. If you are using <code>metalsmith-permalinks</code> plugin you could leave it as default value – 'path’, this plugin adds <code>path</code> property to your content. Otherwise, you may pass own front matter key to the configuration:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
   <span class="token operator">...</span>
   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">disqus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    siteurl<span class="token punctuation">:</span> <span class="token string">&apos;my-site.com&apos;</span><span class="token punctuation">,</span>
-    shortname<span class="token punctuation">:</span> <span class="token string">&apos;my-site&apos;</span><span class="token punctuation">,</span>
-    path<span class="token punctuation">:</span> <span class="token string">&apos;alias&apos;</span> <span class="token comment">// Used `alias` property to find page path.</span>
+    siteurl<span class="token punctuation">:</span> <span class="token string">'my-site.com'</span><span class="token punctuation">,</span>
+    shortname<span class="token punctuation">:</span> <span class="token string">'my-site'</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">:</span> <span class="token string">'alias'</span> <span class="token comment">// Used `alias` property to find page path.</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p><code>path</code> - Metalsmith metadata key to finding your page title that will be used in comments widget configuration. Default value &#x2013; &apos;title&#x2019;. You may pass own front matter key to the configuration:</p><pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
+</code></pre>
+<p><code>path</code> - Metalsmith metadata key to finding your page title that will be used in comments widget configuration. Default value – 'title’. You may pass own front matter key to the configuration:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
   <span class="token operator">...</span>
   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">disqus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    siteurl<span class="token punctuation">:</span> <span class="token string">&apos;my-site.com&apos;</span><span class="token punctuation">,</span>
-    shortname<span class="token punctuation">:</span> <span class="token string">&apos;my-site&apos;</span><span class="token punctuation">,</span>
-    title<span class="token punctuation">:</span> <span class="token string">&apos;label&apos;</span> <span class="token comment">// Used `label` property to find page title.</span>
+    siteurl<span class="token punctuation">:</span> <span class="token string">'my-site.com'</span><span class="token punctuation">,</span>
+    shortname<span class="token punctuation">:</span> <span class="token string">'my-site'</span><span class="token punctuation">,</span>
+    title<span class="token punctuation">:</span> <span class="token string">'label'</span> <span class="token comment">// Used `label` property to find page title.</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p><code>identifier</code> - Metalsmith metadata key to finding your page property from which plugin will generate the unique value. This value will be used in Disqus to define content page unique id. It will help Disqus to add the same commenting widget to all content instances, that may have few aliases, for example, the page may be available by few URLs or under different network protocols. Default value &#x2013; &apos;title&#x2019;, <code>metalsmith-disqus</code> will take the content title and sluglify it. You may pass own front matter key to the configuration:</p><pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
+</code></pre>
+<p><code>identifier</code> - Metalsmith metadata key to finding your page property from which plugin will generate the unique value. This value will be used in Disqus to define content page unique id. It will help Disqus to add the same commenting widget to all content instances, that may have few aliases, for example, the page may be available by few URLs or under different network protocols. Default value – 'title’, <code>metalsmith-disqus</code> will take the content title and sluglify it. You may pass own front matter key to the configuration:</p>
+<pre class="language-js"><code class="language-js"><span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
   <span class="token operator">...</span>
   <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">disqus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    siteurl<span class="token punctuation">:</span> <span class="token string">&apos;my-site.com&apos;</span><span class="token punctuation">,</span>
-    shortname<span class="token punctuation">:</span> <span class="token string">&apos;my-site&apos;</span><span class="token punctuation">,</span>
-    identifier<span class="token punctuation">:</span> <span class="token string">&apos;uuid&apos;</span> <span class="token comment">// Used `uuid` property to generate unique id.</span>
+    siteurl<span class="token punctuation">:</span> <span class="token string">'my-site.com'</span><span class="token punctuation">,</span>
+    shortname<span class="token punctuation">:</span> <span class="token string">'my-site'</span><span class="token punctuation">,</span>
+    identifier<span class="token punctuation">:</span> <span class="token string">'uuid'</span> <span class="token comment">// Used `uuid` property to generate unique id.</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p><code>counterSelector</code> - a string that represents CSS class name selector for counter widget container. By default plugin is looking for <code>.disqus-comment-count</code> elements in markup. Then it will add Disqus identifiers to HTML elements, so disqus widget will know what comments amount to insert inside which of them. Now only selectors starting with class name definition works.</p><h3>Widgets insertion</h3><p>There are two widgets possible to use from Disqus &#x2013; the commenting widget and comments counter. To use comments widgets just add <code>comments: true</code> to content front matter data:</p><pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+</code></pre>
+<p><code>counterSelector</code> - a string that represents CSS class name selector for counter widget container. By default plugin is looking for <code>.disqus-comment-count</code> elements in markup. Then it will add Disqus identifiers to HTML elements, so disqus widget will know what comments amount to insert inside which of them. Now only selectors starting with class name definition works.</p>
+<h3>Widgets insertion</h3>
+<p>There are two widgets possible to use from Disqus – the commenting widget and comments counter. To use comments widgets just add <code>comments: true</code> to content front matter data:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> Hello World
 <span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token punctuation">---</span>
-</code></pre><p>But wouldn&#x2019;t be enough, you need to add HTML container for Disqus comments inside your page template with id <code>disqus_thread</code>, if you&#x2019;re using handlebars as template engine it may look like this:</p><pre class="language-html"><code class="language-html">{{#if comments }}
-<span class="token comment">&lt;!-- Comments widget will be rendered in this element --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>disqus_thread<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>But wouldn’t be enough, you need to add HTML container for Disqus comments inside your page template with id <code>disqus_thread</code>, if you’re using handlebars as template engine it may look like this:</p>
+<pre class="language-html"><code class="language-html">{{#if comments }}
+<span class="token comment"><!-- Comments widget will be rendered in this element --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>section</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disqus_thread<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">section</span><span class="token punctuation">></span></span>
 {{/if}}
-</code></pre><p>The same manipulations needed for comments count widget, just enable <code>comments-counter: true</code> in metadata and add a container to insert text with some comments. The difference is that for the container you should use the class name <code>disqus-comment-count</code> (configured by default) or specify any CSS class with <code>counterSelector</code> option. Also, you need to render property to that is used as <code>identifier</code> in your settings (<code>title</code> by default) inside <code>data-disqus-key</code> attribute. This data-attribute in necessary to insert correct counter to proper content:</p><pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+</span></code></pre>
+<p>The same manipulations needed for comments count widget, just enable <code>comments-counter: true</code> in metadata and add a container to insert text with some comments. The difference is that for the container you should use the class name <code>disqus-comment-count</code> (configured by default) or specify any CSS class with <code>counterSelector</code> option. Also, you need to render property to that is used as <code>identifier</code> in your settings (<code>title</code> by default) inside <code>data-disqus-key</code> attribute. This data-attribute in necessary to insert correct counter to proper content:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> My page
 <span class="token key atrule">comments-counter</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token punctuation">---</span>
-</code></pre><pre class="language-html"><code class="language-html">{{#if comments }}
-<span class="token comment">&lt;!-- Comments counter will be rendered in this element --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>disqus-comment-count<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-disqus-key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{{title}}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<pre class="language-html"><code class="language-html">{{#if comments }}
+<span class="token comment"><!-- Comments counter will be rendered in this element --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disqus-comment-count<span class="token punctuation">"</span></span> <span class="token attr-name">data-disqus-key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{title}}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">span</span><span class="token punctuation">></span></span>
 {{/if}}
-</code></pre><h3>Performance optimizations</h3><p>As a bonus, the plugin can prefetch Disqus DNS and preload scripts by simple parameters in YAML front matter. Adding <code>disqus-dns-prefetch: true</code> will add line tag that will tell the browser to start resolving disqus hosts earlier to decrease library loading time. Other parameters: <code>disqus-prefetch-widget: true</code> and <code>disqus-prefetch-counter: true</code> will force modern browsers to start loading scripts before they are requested by the user.</p><p>Let&#x2019;s imagine real project situation when you have a page(s) with listings of content that have comments, and if you add <code>disqus-prefetch-widget: true</code> to this pages, while user is discovering this content, modern browsers could load commenting widget script. Then after the transition to the content page, widget JavaScript will be already in place. You can check this feature support <a href="http://caniuse.com/#feat=link-rel-prefetch" target="_blank" rel="nofollow noreferrer noopener">here</a>. It is cost nothing to add it, and it will not affect unsupported browsers.</p><h2>Let&#x2019;s keep in touch</h2><p>If you have any issues or any ideas regarding new features, please leave them <a href="https://github.com/vitaliy-bobrov/metalsmith-disqus/issues" target="_blank" rel="nofollow noreferrer noopener">here</a>.</p></section></article><div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget"><div id="commento"></div></div></main><div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"><div class="mdl-snackbar__text"></div><button type="button" class="mdl-snackbar__action"></button></div><footer role="contentinfo" class="mdl-mini-footer page-footer"><section class="mdl-mini-footer--left-section page-footer__left-section"><a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Follow Vitalii Bobrov on Twitter </a><a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#github"/></svg> View Vitalii Bobrov profile on GitHub</a></section><section class="mdl-copyright"><p>&copy; 2020 Bobrov Dev</p></section><section class="mdl-mini-footer--right-section page-footer__right-section"></section></footer></div><div class="mdl-layout__obfuscator"></div></div><script src="/js/main.min.js" async defer></script><script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+</span></code></pre>
+<h3>Performance optimizations</h3>
+<p>As a bonus, the plugin can prefetch Disqus DNS and preload scripts by simple parameters in YAML front matter. Adding <code>disqus-dns-prefetch: true</code> will add line tag that will tell the browser to start resolving disqus hosts earlier to decrease library loading time. Other parameters: <code>disqus-prefetch-widget: true</code> and <code>disqus-prefetch-counter: true</code> will force modern browsers to start loading scripts before they are requested by the user.</p>
+<p>Let’s imagine real project situation when you have a page(s) with listings of content that have comments, and if you add <code>disqus-prefetch-widget: true</code> to this pages, while user is discovering this content, modern browsers could load commenting widget script. Then after the transition to the content page, widget JavaScript will be already in place. You can check this feature support <a href="http://caniuse.com/#feat=link-rel-prefetch" target="_blank" rel="nofollow noreferrer noopener">here</a>. It is cost nothing to add it, and it will not affect unsupported browsers.</p>
+<h2>Let’s keep in touch</h2>
+<p>If you have any issues or any ideas regarding new features, please leave them <a href="https://github.com/vitaliy-bobrov/metalsmith-disqus/issues" target="_blank" rel="nofollow noreferrer noopener">here</a>.</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>

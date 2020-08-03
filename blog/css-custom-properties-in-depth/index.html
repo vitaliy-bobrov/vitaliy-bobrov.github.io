@@ -1,4 +1,59 @@
-<!doctype html><html lang="en"><head><title>CSS Custom Properties in Depth | Bobrov Dev</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" href="https://bobrov.dev/blog/css-custom-properties-in-depth/" hreflang="en"><link rel="canonical" href="https://bobrov.dev/blog/css-custom-properties-in-depth/"><meta name="msapplication-tap-highlight" content="no"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Bobrov Dev"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Bobrov Dev"><meta name="msapplication-TileColor" content="#008ba3"><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16"><meta name="theme-color" content="#008ba3"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"><link rel="stylesheet" href="/css/styles.css"><meta property="fb:app_id" content="393821434298248"><meta property="article:author" content="https://www.facebook.com/bobrov1989"><meta property="og:url" content="https://bobrov.dev/blog/css-custom-properties-in-depth/"><meta property="og:type" content="article"><meta property="og:title" content="CSS Custom Properties in Depth"><meta property="og:description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples."><meta property="og:image" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg"><meta property="og:image:url" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><script type="application/ld+json">{
+<!DOCTYPE html><html lang="en"><head>
+    <title>CSS Custom Properties in Depth | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="https://bobrov.dev/blog/css-custom-properties-in-depth/" hreflang="en">
+    <link rel="canonical" href="https://bobrov.dev/blog/css-custom-properties-in-depth/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="https://bobrov.dev/blog/css-custom-properties-in-depth/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS Custom Properties in Depth">
+    <meta property="og:description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples.">
+    <meta property="og:image" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg">
+    <meta property="og:image:url" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "mainEntityOfPage": "True",
@@ -23,36 +78,209 @@
           }
         },
         "description": "CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples."
-      }</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script><script>if (navigator.doNotTrack !== '1') {
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
         gtag('config', 'UA-90372372-1');
-      }</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="CSS Custom Properties in Depth"><meta name="twitter:description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples."><meta name="twitter:image" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg"><meta name="twitter:image:alt" content="CSS Custom Properties in Depth"></head><body class="mdlext-dark-color-theme mdl-layout__container"><div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout"><header class="mdl-layout__header is-casting-shadow" role="banner"><div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false"><svg class="mdl-svg drawer-icon"><use xlink:href="/images/sprite.svg#menu"/></svg> Menu</div><div class="mdl-layout__header-row"><span class="mdl-layout-title"><a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a></span><div class="mdl-layout-spacer"><a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow"><picture class="site-logo__picture"><source media="(min-width: 1025px)" srcset="/images/logo.webp, /images/logo@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/logo.png, /images/logo@2x.png 2x"><source media="(min-width: 768px)" srcset="/images/logo-tablet.webp, /images/logo-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/logo-tablet.png, /images/logo-tablet@2x.png 2x"><source srcset="/images/logo-mobile.webp, /images/logo-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/logo-mobile.png, /images/logo-mobile@2x.png 2x"><img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img"></picture></a></div><nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Bobrov Dev</span><nav class="mdl-navigation" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About </a><button class="mdl-button mdl-button--raised js-add-to-home" disabled>Add to home screen</button></nav></div><div class="mdl-layout__content js-lazy-container"><main class="mdl-grid posts-grid"><article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col"><header class="mdl-card__media post__media"><picture class="safe-picture"><source media="(min-width: 1025px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.webp, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.jpg, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth@2x.jpg 2x"><source media="(min-width: 768px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet.webp, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet.jpg, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet@2x.jpg 2x"><source srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile.webp, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile.jpg, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile@2x.jpg 2x"><img src="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.jpg" loading="eager" alt="CSS Custom Properties in Depth" class="safe-picture__img"></picture><div class="safe-gradient"></div><h1 class="post__title">CSS Custom Properties in Depth</h1></header><section class="post__info post-info"><div class="post-info__data"><picture class="post-info__avatar"><source srcset="/images/authors/bobrov/avatar.webp, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp"><source srcset="/images/authors/bobrov/avatar.jpg, /images/authors/bobrov/avatar@2x.jpg 2x"><img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar"></picture><div class="post-info__data-wrapper"><div class="post-info__author">Vitalii Bobrov</div><time datetime="2018-05-30" class="post-info__date">30 May 2018</time></div></div><div class="post-info__side"><div class="post-info__categories"><a href="/category/css" class="mdl-chip post-info__category"><span class="mdl-chip__text">CSS</span> </a><a href="/category/houdini" class="mdl-chip post-info__category"><span class="mdl-chip__text">Houdini</span></a></div></div></section><div class="mdl-card__menu post-share"><button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="CSS Custom Properties in Depth" data-share-text="CSS Custom Properties in Depth by @bobrov1989" data-share-url="https://bobrov.dev/blog/css-custom-properties-in-depth/"><span class="ripple-ink"></span> <svg class="mdl-svg post-share__icon"><use xlink:href="/images/sprite.svg#share"/></svg> Share post</button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu"><li class="mdl-menu__item share-menu__item"><a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#facebook"/></svg> Facebook</a></li><li class="mdl-menu__item share-menu__item"><a href="https://twitter.com/home?status=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Twitter</a></li><li class="mdl-menu__item share-menu__item"><a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#linkedin"/></svg> LinkedIn</a></li></ul></div><section class="post__contents"><p>&#x201C;CSS Properties and Values API Level 1&#x201D; is a brand new draft for CSS specification module. It gives developers the power to extend stylesheet dictionary. I have already mentioned custom properties in my previous articles: <a href="https://bobrov.dev/blog/css-paint-in-action-bar-chart/">&#x201C;Exploring the CSS Paint API&#x201D;</a> and <a href="https://bobrov.dev/blog/css-paint-in-action-bar-chart/">&#x201C;CSS Paint in Action: Bar Chart&#x201D;</a>. But today I want to introduce them in as many details as possible. So let&#x2019;s start our journey into properties and values far depths &#x2693;!</p><p class="post__series">The topic splitted into two parts. Now you are reading the first one. You can check out the second part <a href="https://bobrov.dev/blog/css-custom-properties-in-depth-part-2/">here</a>.</p><h2>What are custom properties?</h2><p>CSS Properties and Values API is the part of Houdini project that allows <strong>you</strong> as developer create own variables to use later in your styles. The idea behind them is pretty similar to variables we have for many years in SASS, LESS or Stylus. The main difference between preprocessor variables and CSS properties that they are <strong>not</strong> static and existing at compile time only. You can change them in more specific selector block, for example on <code>:hover</code> or a <code>media-query</code> block. You could access them from JavaScript to read and modify. We will see all those features later in cases.</p><h2>How to define and use the custom property?</h2><p>There is special syntax for all custom properties &#x2013; a name of each property should be prefixed with <code>--</code> symbols. The name itself should be in lowercase (preferred) or uppercase letters (as CSS built-in properties are case insensitive) delimiter by <code>-</code>. As a value, we can use everything we want &#x2013; strings, numbers, colors, JavaScript code. Let&#x2019;s create few custom properties:</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="CSS Custom Properties in Depth"><meta name="twitter:description" content="CSS Properties and Values API the vital part of Houdini project. This deep dive demonstrates its power on real examples."><meta name="twitter:image" content="https://bobrov.dev/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-og.jpg"><meta name="twitter:image:alt" content="CSS Custom Properties in Depth"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.webp 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.jpg 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet.webp 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet.jpg 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile.webp 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile.jpg 1x, /images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth-mobile@2x.jpg 2x">
+      <img src="/images/posts/css-custom-properties-in-depth/css-custom-properties-in-depth.jpg" loading="eager" alt="CSS Custom Properties in Depth" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  CSS Custom Properties in Depth
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2018-05-30" class="post-info__date">
+                      30 May 2018
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/css" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">CSS</span>
+                      </a>
+                      <a href="/category/houdini" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Houdini</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="CSS Custom Properties in Depth" data-share-text="CSS Custom Properties in Depth by @bobrov1989" data-share-url="https://bobrov.dev/blog/css-custom-properties-in-depth/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/css-custom-properties-in-depth/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>“CSS Properties and Values API Level 1” is a brand new draft for CSS specification module. It gives developers the power to extend stylesheet dictionary. I have already mentioned custom properties in my previous articles: <a href="https://bobrov.dev/blog/css-paint-in-action-bar-chart/">“Exploring the CSS Paint API”</a> and <a href="https://bobrov.dev/blog/css-paint-in-action-bar-chart/">“CSS Paint in Action: Bar Chart”</a>. But today I want to introduce them in as many details as possible. So let’s start our journey into properties and values far depths ⚓!</p>
+<p class="post__series">The topic splitted into two parts. Now you are reading the first one. You can check out the second part <a href="https://bobrov.dev/blog/css-custom-properties-in-depth-part-2/">here</a>.</p>
+<h2>What are custom properties?</h2>
+<p>CSS Properties and Values API is the part of Houdini project that allows <strong>you</strong> as developer create own variables to use later in your styles. The idea behind them is pretty similar to variables we have for many years in SASS, LESS or Stylus. The main difference between preprocessor variables and CSS properties that they are <strong>not</strong> static and existing at compile time only. You can change them in more specific selector block, for example on <code>:hover</code> or a <code>media-query</code> block. You could access them from JavaScript to read and modify. We will see all those features later in cases.</p>
+<h2>How to define and use the custom property?</h2>
+<p>There is special syntax for all custom properties – a name of each property should be prefixed with <code>--</code> symbols. The name itself should be in lowercase (preferred) or uppercase letters (as CSS built-in properties are case insensitive) delimiter by <code>-</code>. As a value, we can use everything we want – strings, numbers, colors, JavaScript code. Let’s create few custom properties:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">--my-num-prop</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">;</span>
   <span class="token property">--string-prop</span><span class="token punctuation">:</span> text<span class="token punctuation">;</span>
-  <span class="token property">--another-string</span><span class="token punctuation">:</span> <span class="token string">&apos;content&apos;</span><span class="token punctuation">;</span>
+  <span class="token property">--another-string</span><span class="token punctuation">:</span> <span class="token string">'content'</span><span class="token punctuation">;</span>
   <span class="token property">--length-prop</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
-  <span class="token property">--js-prop</span><span class="token punctuation">:</span> if <span class="token punctuation">(</span>a &gt; b<span class="token punctuation">)</span> return <span class="token number">30</span><span class="token punctuation">;</span>
+  <span class="token property">--js-prop</span><span class="token punctuation">:</span> if <span class="token punctuation">(</span>a > b<span class="token punctuation">)</span> return <span class="token number">30</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>To use it as the value of any CSS property we have <code>var</code> function. We should call <code>var</code> and pass variable name in it. Also, we allowed defining default fallback value for that property if it wasn&#x2019;t initialized.</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>To use it as the value of any CSS property we have <code>var</code> function. We should call <code>var</code> and pass variable name in it. Also, we allowed defining default fallback value for that property if it wasn’t initialized.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">--offset</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--offset, <span class="token number">30</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>The only thing you should remember is CSS parsing process that means you can&#x2019;t use <code>:</code> or <code>;</code> outside quotes as they will be used as delimiters by CSS engine.</p><pre class="language-css"><code class="language-css"><span class="token comment">/* Will be parsed wrongly */</span>
+</code></pre>
+<p>The only thing you should remember is CSS parsing process that means you can’t use <code>:</code> or <code>;</code> outside quotes as they will be used as delimiters by CSS engine.</p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Will be parsed wrongly */</span>
 <span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">--offset</span><span class="token punctuation">:</span> <span class="token property">a</span><span class="token punctuation">:</span> something<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>By default, uninitialized variables have no value until we don&#x2019;t configure another behavior. In this case, the fallback value will be used:</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>By default, uninitialized variables have no value until we don’t configure another behavior. In this case, the fallback value will be used:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token comment">/* margin: 30px */</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--offset, <span class="token number">30</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>And one more important thing &#x2013; we can use another property as a default value. And this variable could also have a fallback:</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>And one more important thing – we can use another property as a default value. And this variable could also have a fallback:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token comment">/* margin: 30px */</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--offset, <span class="token function">var</span><span class="token punctuation">(</span>--root-offset, <span class="token number">30</span>px<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>In previous examples, we defined the property on the element itself, but we can use <code>:root</code> to create global variables. Root is standing for CSS OM root node that similar to <code>html</code> tag.</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token pseudo-class">:root</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>In previous examples, we defined the property on the element itself, but we can use <code>:root</code> to create global variables. Root is standing for CSS OM root node that similar to <code>html</code> tag.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token pseudo-class">:root</span> </span><span class="token punctuation">{</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -60,7 +288,9 @@
   <span class="token comment">/* blue */</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color, red<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>CSS custom properties also use cascade, that means we can override them by increasing CSS specificity:</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>CSS custom properties also use cascade, that means we can override them by increasing CSS specificity:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -69,7 +299,9 @@
   <span class="token comment">/* background: black */</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>Or use them in media queries and other CSS blocks:</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>Or use them in media queries and other CSS blocks:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -85,60 +317,103 @@
     <span class="token property">--theme-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><h2>What is the difference between CSS variable and custom property?</h2><p>Actually, there is no difference between CSS variable and CSS custom property, correctly to call both as custom properties. The only thing is that when we declare a custom property with <code>CSS.registerProperty</code>, you will get more control over it. Under more control I mean that you will be able to assign CSS type, set initial value and inheritance.</p><h2>Browsers support</h2><p>If we are speaking about CSS variables, the browsers support is incredible! All &#x201C;evergreen&#x201D; one has full support.</p><p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/caniuse.jpg" alt="CSS Variables support according to CanIUse.com"></p><p>Unfortunately, can&#x2019;t say the same about custom properties &#x1F622;. Only Chrome and Firefox started initial implementation of the spec.</p><p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/ishoudinireadyyet.jpg" alt="CSS Properties and Values browsers implementation status on May 2018"></p><p>It will be great to be prepared before custom properties will be released in stable browser branch. You can always check the current status of every Houdini feature <a href="https://ishoudinireadyyet.com/" target="_blank" rel="nofollow noreferrer noopener">here</a>.</p><h3><strong>Note:</strong></h3><p><em>Work with <code>registerProperty</code> requires you to enable &#x201C;Experimental Web Platform features&#x201D;</em> &#x2013; <code>chrome://flags/#enable-experimental-web-platform-features</code> <em>to try it in Chrome.</em></p><p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/chrome-flags.jpg" alt="Chrome v66 &quot;Experimental Web Platform features&quot; enabled on chrome://flags"></p><h2>How to register custom property?</h2><p>To register custom property, you need to use the static <code>CSS.registerProperty</code> method and pass configuration object. The code might look like this:</p><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&apos;registerProperty&apos;</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h2>What is the difference between CSS variable and custom property?</h2>
+<p>Actually, there is no difference between CSS variable and CSS custom property, correctly to call both as custom properties. The only thing is that when we declare a custom property with <code>CSS.registerProperty</code>, you will get more control over it. Under more control I mean that you will be able to assign CSS type, set initial value and inheritance.</p>
+<h2>Browsers support</h2>
+<p>If we are speaking about CSS variables, the browsers support is incredible! All “evergreen” one has full support.</p>
+<p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/caniuse.jpg" alt="CSS Variables support according to CanIUse.com"></p>
+<p>Unfortunately, can’t say the same about custom properties 😢. Only Chrome and Firefox started initial implementation of the spec.</p>
+<p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/ishoudinireadyyet.jpg" alt="CSS Properties and Values browsers implementation status on May 2018"></p>
+<p>It will be great to be prepared before custom properties will be released in stable browser branch. You can always check the current status of every Houdini feature <a href="https://ishoudinireadyyet.com/" target="_blank" rel="nofollow noreferrer noopener">here</a>.</p>
+<h3><strong>Note:</strong></h3>
+<p><em>Work with <code>registerProperty</code> requires you to enable “Experimental Web Platform features”</em> – <code>chrome://flags/#enable-experimental-web-platform-features</code> <em>to try it in Chrome.</em></p>
+<p class="js-lazy-load"><img src="/images/posts/css-custom-properties-in-depth/img/chrome-flags.jpg" alt="Chrome v66 " experimental="" web="" platform="" features"="" enabled="" on="" chrome:="" flags"=""></p>
+<h2>How to register custom property?</h2>
+<p>To register custom property, you need to use the static <code>CSS.registerProperty</code>  method and pass configuration object. The code might look like this:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'registerProperty'</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    name<span class="token punctuation">:</span> <span class="token string">&apos;--my-custom-prop&apos;</span><span class="token punctuation">,</span>
-    syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'--my-custom-prop'</span><span class="token punctuation">,</span>
+    syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
     inherits<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    initialValue<span class="token punctuation">:</span> <span class="token string">&apos;black&apos;</span>
+    initialValue<span class="token punctuation">:</span> <span class="token string">'black'</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>So, first of all, we are detecting feature support in our browser, as a part of progressive enhancement. If <code>registerProperty</code> not supported in the browser, we still able to use CSS variables in styles. Let&#x2019;s have a closer look at each configuration parameter. The configuration object is required, if we try to call the method without it, we will get JS exception.</p><h3>name</h3><p>This is the only required parameter, if we try to register property without <code>name</code> provided we will get an exception &#x2013; &quot;<em>Uncaught TypeError: Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: required member name is undefined.</em>&quot;.</p><p>The other thing regarding property name that you must follow the naming rule &#x2013; name should start with <code>--</code> symbols. The reason for that is to have the ability to use CSS custom properties with CSS pre/post-processors and separate them from built-in CSS properties. If you try to give a name in an incorrect format, you will see the error &#x2013; &quot;<em>DOMException: Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: Custom property names must start with &apos;&#x2013;&#x2019;.</em>&quot;.</p><p>If a property with that name has been already registered, a browser will throw next error &#x2013; &quot;<em>Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: The name provided has already been registered.</em>&quot;.</p><h3>syntax</h3><p>Syntax stands for our property type definition. Its default value is <code>*</code> that is similar to TypeScript <code>any</code> type. This means that you can assign any value to your property. The type definition syntax is straightforward &#x2013; <strong>&lt;TYPE_NAME&gt;</strong>, where <code>TYPE_NAME</code> should be replaced with actual CSS type you want to assign. In our example we used <code>color</code> type, that gives ability to assign any CSS color value, for example: <code>rebeccapurple</code>, <code>rgba(0, 0, 0, .5)</code>, <code>#ff00ff</code>, <code>hls(240, 10%, 50%)</code>. We will look what types are available later in this article.</p><p>Similarly to TypeScript, it is possible to define the union of types and list of arguments. To declare union, we should separate types with <code>|</code> as the delimiter:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-size&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;length&gt; | &lt;percentage&gt;&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>So, first of all, we are detecting feature support in our browser, as a part of progressive enhancement. If <code>registerProperty</code> not supported in the browser, we still able to use CSS variables in styles. Let’s have a closer look at each configuration parameter. The configuration object is required, if we try to call the method without it, we will get JS exception.</p>
+<h3>name</h3>
+<p>This is the only required parameter, if we try to register property without <code>name</code> provided we will get an exception – "<em>Uncaught TypeError: Failed to execute ‘registerProperty’ on 'CSS’: required member name is undefined.</em>".</p>
+<p>The other thing regarding property name that you must follow the naming rule – name should start with <code>--</code> symbols. The reason for that is to have the ability to use CSS custom properties with CSS pre/post-processors and separate them from built-in CSS properties. If you try to give a name in an incorrect format, you will see the error – "<em>DOMException: Failed to execute ‘registerProperty’ on 'CSS’: Custom property names must start with '–’.</em>".</p>
+<p>If a property with that name has been already registered, a browser will throw next error – "<em>Failed to execute ‘registerProperty’ on 'CSS’: The name provided has already been registered.</em>".</p>
+<h3>syntax</h3>
+<p>Syntax stands for our property type definition. Its default value is <code>*</code> that is similar to TypeScript <code>any</code> type. This means that you can assign any value to your property. The type definition syntax is straightforward – <strong><type_name></type_name></strong>, where <code>TYPE_NAME</code> should be replaced with actual CSS type you want to assign. In our example we used <code>color</code> type, that gives ability to assign any CSS color value, for example: <code>rebeccapurple</code>, <code>rgba(0, 0, 0, .5)</code>, <code>#ff00ff</code>, <code>hls(240, 10%, 50%)</code>. We will look what types are available later in this article.</p>
+<p>Similarly to TypeScript, it is possible to define the union of types and list of arguments. To declare union, we should separate types with <code>|</code> as the delimiter:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-size'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<length> | <percentage>'</percentage></length></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;100%&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'100%'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>In this example we declare that <code>--my-size</code> property accepts length OR percentage types, like <code>10px</code>, <code>3em</code>, <code>10vw</code>, <code>10%</code>. If the provided value does not match to those types, the property will use fallback or initial value instead.</p><p>To specify a list of values as a type, you should add <code>+</code> sign at the end of the type definition, example:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-colors&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;+&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>In this example we declare that <code>--my-size</code> property accepts length OR percentage types, like <code>10px</code>, <code>3em</code>, <code>10vw</code>, <code>10%</code>. If the provided value does not match to those types, the property will use fallback or initial value instead.</p>
+<p>To specify a list of values as a type, you should add <code>+</code> sign at the end of the type definition, example:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-colors'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>+'</color></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;black white&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'black white'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>In this example we want our property to have one or more colors delimited with a space. If the syntax is invalid browser will throw an error &#x2013; &quot;<em>Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: The syntax provided is not a valid custom property syntax.</em>&quot;.</p><p>If you want values list to be separated with commas you should use <code>#</code> at the syntax type end:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-colors&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;#&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>In this example we want our property to have one or more colors delimited with a space. If the syntax is invalid browser will throw an error – "<em>Failed to execute ‘registerProperty’ on 'CSS’: The syntax provided is not a valid custom property syntax.</em>".</p>
+<p>If you want values list to be separated with commas you should use <code>#</code> at the syntax type end:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-colors'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>#'</color></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;black, white&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'black, white'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>There are much more possibilities to describe types that unfortunately not supported by the current CSS Custom Properties and Values specification. Hope to see them all in the next specification release &#x1F64F;.</p><h3>initialValue</h3><p>You might notice that I have used the <code>initialValue</code> parameter in the previous section examples. An initial value is required if the <code>syntax</code> was specified as any value different from <code>*</code>. If you trying to register the property with some type without providing <code>initialValue</code>, you&#x2019;ll face such error &#x2013; &quot;<em>DOMException: Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: An initial value must be provided if the syntax is not &#x2018;*&#x2019;</em>&quot;. Also, initial value should match the type specified as syntax, in another case you will see an error &#x2013; &quot;<em>DOMException: Failed to execute &#x2018;registerProperty&#x2019; on &apos;CSS&#x2019;: The initial value provided does not parse for the given syntax.</em>&quot;. For <code>*</code> syntax type <code>initialValue</code> is optional and could have any value:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-any-prop&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;*&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>There are much more possibilities to describe types that unfortunately not supported by the current CSS Custom Properties and Values specification. Hope to see them all in the next specification release 🙏.</p>
+<h3>initialValue</h3>
+<p>You might notice that I have used the <code>initialValue</code> parameter in the previous section examples. An initial value is required if the <code>syntax</code> was specified as any value different from <code>*</code>. If you trying to register the property with some type without providing <code>initialValue</code>, you’ll face such error – "<em>DOMException: Failed to execute ‘registerProperty’ on 'CSS’: An initial value must be provided if the syntax is not ‘*’</em>". Also, initial value should match the type specified as syntax, in another case you will see an error – "<em>DOMException: Failed to execute ‘registerProperty’ on 'CSS’: The initial value provided does not parse for the given syntax.</em>". For <code>*</code> syntax type <code>initialValue</code> is optional and could have any value:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-any-prop'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'*'</span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;10px&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'10px'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>CSS variables created without <code>registerProperty</code> have <code>initialValue</code> as well, it is empty by default. That means that if a property weren&#x2019;t initialized, a fallback value would be used.</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<p>CSS variables created without <code>registerProperty</code> have <code>initialValue</code> as well, it is empty by default. That means that if a property weren’t initialized, a fallback value would be used.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color, red<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>The value of <code>background</code> will be red, as <code>--theme-color</code> wasn&#x2019;t initialized and the initial value is empty. But if we will register our property:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--theme-color&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>The value of <code>background</code> will be red, as <code>--theme-color</code> wasn’t initialized and the initial value is empty. But if we will register our property:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--theme-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'blue'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.element</span> </span><span class="token punctuation">{</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color, red<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>The value of the <code>background</code> will be blue, as it specified as the initial value for <code>--theme-color</code> in property configuration.</p><p>The important thing here is that the <code>initial</code> keyword. Let me show the code:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--theme-color&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>The value of the <code>background</code> will be blue, as it specified as the initial value for <code>--theme-color</code> in property configuration.</p>
+<p>The important thing here is that the <code>initial</code> keyword. Let me show the code:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--theme-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>red-theme<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>default-theme<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
-</code></pre><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.red-theme</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red-theme<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default-theme<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">article</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">section</span><span class="token punctuation">></span></span>
+</span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.red-theme</span> </span><span class="token punctuation">{</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -147,50 +422,71 @@
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--theme-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>In this example element with class name, <code>default-theme</code> will inherit <code>--theme-color</code> property and then resets it to the initial value. So its background color will be blue.</p><h3>inherits</h3><p>Inherits is a boolean parameter, that obliviously stands for custom property inheritance from DOM tree. It is <code>false</code> by default and after the latest spec update is required. The reason for such default is performance, as browser don&#x2019;t need to walk through DOM tree to define which nodes inherit properties. You need to set inheritance to <code>true</code> if you want the property to be inherited:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-col&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;red&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>In this example element with class name, <code>default-theme</code> will inherit <code>--theme-color</code> property and then resets it to the initial value. So its background color will be blue.</p>
+<h3>inherits</h3>
+<p>Inherits is a boolean parameter, that obliviously stands for custom property inheritance from DOM tree. It is <code>false</code> by default and after the latest spec update is required. The reason for such default is performance, as browser don’t need to walk through DOM tree to define which nodes inherit properties. You need to set inheritance to <code>true</code> if you want the property to be inherited:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-col'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-</code></pre><pre class="language-css"><code class="language-css"><span class="token selector">ul </span><span class="token punctuation">{</span>
+</code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>li</span><span class="token punctuation">></span></span>item 1<span class="token tag"><span class="token tag"><span class="token punctuation">li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>li</span><span class="token punctuation">></span></span>item 2<span class="token tag"><span class="token tag"><span class="token punctuation">li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation"><</span>li</span><span class="token punctuation">></span></span>item 3<span class="token tag"><span class="token tag"><span class="token punctuation">li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">ul</span><span class="token punctuation">></span></span>
+</span></span></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">ul </span><span class="token punctuation">{</span>
   <span class="token property">--my-col</span><span class="token punctuation">:</span> <span class="token hexcode">#ff00ff</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token selector">li </span><span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--my-col, blue<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>In this example, we have a simple unordered list in HTML. Then we assign the value to <code>--my-col</code> property that accepts CSS colors. Next, we are using this property for list item text color value with fallback specified as well. Each of items will have <code>#ff00ff</code> text color because the property was inherited from <code>ul</code> element in the DOM tree.</p><p>Actually, CSS variable created in stylesheet only equals to the next registered custom property:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--my-var&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;*&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>In this example, we have a simple unordered list in HTML. Then we assign the value to <code>--my-col</code> property that accepts CSS colors. Next, we are using this property for list item text color value with fallback specified as well. Each of items will have <code>#ff00ff</code> text color because the property was inherited from <code>ul</code> element in the DOM tree.</p>
+<p>Actually, CSS variable created in stylesheet only equals to the next registered custom property:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--my-var'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'*'</span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">true</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><h2>Why we might need a type of custom properties?</h2><p>There are few cases when we want our custom properties to be strictly typed: value validation, and animations.</p><h3>CSS value validation</h3><p>This is the straightforward use case as if we expect CSS property to have an only valid type. If the type does not match value assignment for the property will be ignored and inherited/initial/fallback value will be used. Also, types could be used in JavaScript, in the main context or in some worklet, like CSS Paint.</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--theme-color&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<h2>Why we might need a type of custom properties?</h2>
+<p>There are few cases when we want our custom properties to be strictly typed: value validation, and animations.</p>
+<h3>CSS value validation</h3>
+<p>This is the straightforward use case as if we expect CSS property to have an only valid type. If the type does not match value assignment for the property will be ignored and inherited/initial/fallback value will be used. Also, types could be used in JavaScript, in the main context or in some worklet, like CSS Paint.</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--theme-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;blue&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'blue'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.dark-theme-section</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.dark-theme-section</span> </span><span class="token punctuation">{</span>
   <span class="token property">--theme-color</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>We declared <code>--theme-color</code> property that accepts only CSS color as a value. Then in our stylesheet we assigned <code>1</code> as the value for that property. As <code>1</code> is not valid color value, the property will use initial value. Let&#x2019;s we try to get the value in JavaScript:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> section <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.dark-theme-section&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>We declared <code>--theme-color</code> property that accepts only CSS color as a value. Then in our stylesheet we assigned <code>1</code> as the value for that property. As <code>1</code> is not valid color value, the property will use initial value. Let’s we try to get the value in JavaScript:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> section <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.dark-theme-section'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> styles <span class="token operator">=</span> <span class="token function">getComputedStyle</span><span class="token punctuation">(</span>section<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> themeColor <span class="token operator">=</span> styles<span class="token punctuation">.</span><span class="token function">getPropertyValue</span><span class="token punctuation">(</span><span class="token string">&apos;--theme-color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> themeColor <span class="token operator">=</span> styles<span class="token punctuation">.</span><span class="token function">getPropertyValue</span><span class="token punctuation">(</span><span class="token string">'--theme-color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>themeColor<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &quot;blue&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>themeColor<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "blue"</span>
 
 
 <span class="token keyword">const</span> styleMap <span class="token operator">=</span> section<span class="token punctuation">.</span><span class="token function">computedStyleMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> typedValue <span class="token operator">=</span> styleMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;--theme-color&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> typedValue <span class="token operator">=</span> styleMap<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'--theme-color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>typedValue<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// CSSKeywordValue {value: &quot;blue&quot;}</span>
-</code></pre><p>We can access our property value in JS, and the only valid one will be used.</p><h3>Animations</h3><p>If we try to animate CSS variables in styles with <code>transition</code> or <code>animation</code> it won&#x2019;t work, the value will be changed at 50% timeframe point without any smooth interpolation.</p><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.no-smoosh</span> </span><span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>typedValue<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// CSSKeywordValue {value: "blue"}</span>
+</code></pre>
+<p>We can access our property value in JS, and the only valid one will be used.</p>
+<h3>Animations</h3>
+<p>If we try to animate CSS variables in styles with <code>transition</code> or <code>animation</code> it won’t work, the value will be changed at 50% timeframe point without any smooth interpolation.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.no-smoosh</span> </span><span class="token punctuation">{</span>
   <span class="token property">--bg-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bg-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">transition</span><span class="token punctuation">:</span> --bg-color <span class="token number">.3</span>s linear<span class="token punctuation">;</span>
@@ -199,13 +495,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token selector"><span class="token class">.no-smoosh</span><span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>
   <span class="token property">--bg-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>This happens because for browsers custom property without the type is just string and it has no idea how to interpolate one string into another. But browser already has the internal functionality to interpolate built-in CSS value of different types, like length, percentage, color, etc. So to make custom property soothly animated, we need to tell the browser what type to expect for particular custom property:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  name<span class="token punctuation">:</span> <span class="token string">&apos;--bg-color&apos;</span><span class="token punctuation">,</span>
-  syntax<span class="token punctuation">:</span> <span class="token string">&apos;&lt;color&gt;&apos;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>This happens because for browsers custom property without the type is just string and it has no idea how to interpolate one string into another. But browser already has the internal functionality to interpolate built-in CSS value of different types, like length, percentage, color, etc. So to make custom property soothly animated, we need to tell the browser what type to expect for particular custom property:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span><span class="token function">registerProperty</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">'--bg-color'</span><span class="token punctuation">,</span>
+  syntax<span class="token punctuation">:</span> <span class="token string">'<color>'</color></span><span class="token punctuation">,</span>
   inherits<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  initialValue<span class="token punctuation">:</span> <span class="token string">&apos;red&apos;</span>
+  initialValue<span class="token punctuation">:</span> <span class="token string">'red'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.smoosh</span> </span><span class="token punctuation">{</span>
+</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.smoosh</span> </span><span class="token punctuation">{</span>
   <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--bg-color<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">transition</span><span class="token punctuation">:</span> --bg-color <span class="token number">.3</span>s linear<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -213,4 +512,77 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token selector"><span class="token class">.smoosh</span><span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>
   <span class="token property">--bg-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>In this case, the <code>background</code> will be smoothly changed from red to blue.</p><h2>What types are available?</h2><p>Unfortunately, not all CSS types available for custom property syntax in the current spec version. For now, it is limited to the next list:</p><ul><li><code>length</code></li><li><code>number</code></li><li><code>percentage</code></li><li><code>length-percentage</code></li><li><code>color</code></li><li><code>image</code></li><li><code>url</code></li><li><code>integer</code></li><li><code>angle</code></li><li><code>time</code></li><li><code>resolution</code></li><li><code>transform-list</code></li><li><code>transform-function</code></li><li><code>custom-ident</code></li></ul><p>There are interfaces for <code>&lt;url&gt;</code> and <code>&lt;image&gt;</code> in Blink core, but they still in development. That is why it is impossible to test them now. And it seems that specification for this types usage could be slightly changed in the future.</p><p>All of this types could be used as input arguments in Houdini worklets, for example, the CSS Paint API.</p><h2>Conclusion</h2><p>Houdini &#x201C;Custom Properties and Values&#x201D; is the very powerful specification that opens a vast field for experiments. Working on this post, I realized that topic and amount of info and ideas I want to share is too big. That is why I decided to split it at least into two parts. In the next part of the article, I will make the in-depth overview of each available type. Check out the <a href="https://bobrov.dev/blog/css-custom-properties-in-depth-part-2/">second part</a>! Hope you enjoyed our journey to the deep of the spec &#x1F60A;! Read &amp; share! See you in the future &#x1F468;&#x200D;&#x2695;&#xFE0F;&#x1F472;&#x1F699;.</p></section></article><div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget"><div id="commento"></div></div></main><div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"><div class="mdl-snackbar__text"></div><button type="button" class="mdl-snackbar__action"></button></div><footer role="contentinfo" class="mdl-mini-footer page-footer"><section class="mdl-mini-footer--left-section page-footer__left-section"><a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Follow Vitalii Bobrov on Twitter </a><a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#github"/></svg> View Vitalii Bobrov profile on GitHub</a></section><section class="mdl-copyright"><p>&copy; 2020 Bobrov Dev</p></section><section class="mdl-mini-footer--right-section page-footer__right-section"></section></footer></div><div class="mdl-layout__obfuscator"></div></div><script src="/js/main.min.js" async defer></script><script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+</code></pre>
+<p>In this case, the <code>background</code> will be smoothly changed from red to blue.</p>
+<h2>What types are available?</h2>
+<p>Unfortunately, not all CSS types available for custom property syntax in the current spec version. For now, it is limited to the next list:</p>
+<ul><li><code>length</code></li>
+<li><code>number</code></li>
+<li><code>percentage</code></li>
+<li><code>length-percentage</code></li>
+<li><code>color</code></li>
+<li><code>image</code></li>
+<li><code>url</code></li>
+<li><code>integer</code></li>
+<li><code>angle</code></li>
+<li><code>time</code></li>
+<li><code>resolution</code></li>
+<li><code>transform-list</code></li>
+<li><code>transform-function</code></li>
+<li><code>custom-ident</code></li>
+</ul>
+<p>There are interfaces for <code><url></url></code> and <code><image></image></code> in Blink core, but they still in development. That is why it is impossible to test them now. And it seems that specification for this types usage could be slightly changed in the future.</p>
+<p>All of this types could be used as input arguments in Houdini worklets, for example, the CSS Paint API.</p>
+<h2>Conclusion</h2>
+<p>Houdini “Custom Properties and Values” is the very powerful specification that opens a vast field for experiments. Working on this post, I realized that topic and amount of info and ideas I want to share is too big. That is why I decided to split it at least into two parts. In the next part of the article, I will make the in-depth overview of each available type. Check out the <a href="https://bobrov.dev/blog/css-custom-properties-in-depth-part-2/">second part</a>! Hope you enjoyed our journey to the deep of the spec 😊! Read & share! See you in the future 👨‍⚕️👲🚙.</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>

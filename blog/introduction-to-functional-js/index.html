@@ -1,4 +1,59 @@
-<!doctype html><html lang="en"><head><title>Introduction to Functional JavaScript | Bobrov Dev</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I&#x27;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" href="https://bobrov.dev/blog/introduction-to-functional-js/" hreflang="en"><link rel="canonical" href="https://bobrov.dev/blog/introduction-to-functional-js/"><meta name="msapplication-tap-highlight" content="no"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Bobrov Dev"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Bobrov Dev"><meta name="msapplication-TileColor" content="#008ba3"><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16"><meta name="theme-color" content="#008ba3"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"><link rel="stylesheet" href="/css/styles.css"><meta property="fb:app_id" content="393821434298248"><meta property="article:author" content="https://www.facebook.com/bobrov1989"><meta property="og:url" content="https://bobrov.dev/blog/introduction-to-functional-js/"><meta property="og:type" content="article"><meta property="og:title" content="Introduction to Functional JavaScript"><meta property="og:description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I&#x27;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner."><meta property="og:image" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg"><meta property="og:image:url" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><script type="application/ld+json">{
+<!DOCTYPE html><html lang="en"><head>
+    <title>Introduction to Functional JavaScript | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I'll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="https://bobrov.dev/blog/introduction-to-functional-js/" hreflang="en">
+    <link rel="canonical" href="https://bobrov.dev/blog/introduction-to-functional-js/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="https://bobrov.dev/blog/introduction-to-functional-js/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Introduction to Functional JavaScript">
+    <meta property="og:description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I'll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner.">
+    <meta property="og:image" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg">
+    <meta property="og:image:url" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "mainEntityOfPage": "True",
@@ -23,29 +78,214 @@
           }
         },
         "description": "Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I&#x27;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner."
-      }</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script><script>if (navigator.doNotTrack !== '1') {
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
         gtag('config', 'UA-90372372-1');
-      }</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Introduction to Functional JavaScript"><meta name="twitter:description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I&#39;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner."><meta name="twitter:image" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg"><meta name="twitter:image:alt" content="Introduction to Functional JavaScript"></head><body class="mdlext-dark-color-theme mdl-layout__container"><div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout"><header class="mdl-layout__header is-casting-shadow" role="banner"><div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false"><svg class="mdl-svg drawer-icon"><use xlink:href="/images/sprite.svg#menu"/></svg> Menu</div><div class="mdl-layout__header-row"><span class="mdl-layout-title"><a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a></span><div class="mdl-layout-spacer"><a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow"><picture class="site-logo__picture"><source media="(min-width: 1025px)" srcset="/images/logo.webp, /images/logo@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/logo.png, /images/logo@2x.png 2x"><source media="(min-width: 768px)" srcset="/images/logo-tablet.webp, /images/logo-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/logo-tablet.png, /images/logo-tablet@2x.png 2x"><source srcset="/images/logo-mobile.webp, /images/logo-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/logo-mobile.png, /images/logo-mobile@2x.png 2x"><img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img"></picture></a></div><nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Bobrov Dev</span><nav class="mdl-navigation" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About </a><button class="mdl-button mdl-button--raised js-add-to-home" disabled>Add to home screen</button></nav></div><div class="mdl-layout__content js-lazy-container"><main class="mdl-grid posts-grid"><article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col"><header class="mdl-card__media post__media"><picture class="safe-picture"><source media="(min-width: 1025px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js.webp, /images/posts/introduction-to-functional-js/introduction-to-functional-js@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js.jpg, /images/posts/introduction-to-functional-js/introduction-to-functional-js@2x.jpg 2x"><source media="(min-width: 768px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet.webp, /images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet.jpg, /images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet@2x.jpg 2x"><source srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile.webp, /images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile.jpg, /images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile@2x.jpg 2x"><img src="/images/posts/introduction-to-functional-js/introduction-to-functional-js.jpg" loading="eager" alt="Introduction to Functional JavaScript" class="safe-picture__img"></picture><div class="safe-gradient"></div><h1 class="post__title">Introduction to Functional JavaScript</h1></header><section class="post__info post-info"><div class="post-info__data"><picture class="post-info__avatar"><source srcset="/images/authors/bobrov/avatar.webp, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp"><source srcset="/images/authors/bobrov/avatar.jpg, /images/authors/bobrov/avatar@2x.jpg 2x"><img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar"></picture><div class="post-info__data-wrapper"><div class="post-info__author">Vitalii Bobrov</div><time datetime="2017-03-19" class="post-info__date">19 March 2017</time></div></div><div class="post-info__side"><div class="post-info__categories"><a href="/category/javascript" class="mdl-chip post-info__category"><span class="mdl-chip__text">JavaScript</span> </a><a href="/category/functional-programming" class="mdl-chip post-info__category"><span class="mdl-chip__text">Functional Programming</span></a></div></div></section><div class="mdl-card__menu post-share"><button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Introduction to Functional JavaScript" data-share-text="Introduction to Functional JavaScript by @bobrov1989" data-share-url="https://bobrov.dev/blog/introduction-to-functional-js/"><span class="ripple-ink"></span> <svg class="mdl-svg post-share__icon"><use xlink:href="/images/sprite.svg#share"/></svg> Share post</button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu"><li class="mdl-menu__item share-menu__item"><a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#facebook"/></svg> Facebook</a></li><li class="mdl-menu__item share-menu__item"><a href="https://twitter.com/home?status=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Twitter</a></li><li class="mdl-menu__item share-menu__item"><a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#linkedin"/></svg> LinkedIn</a></li></ul></div><section class="post__contents"><p>Functional programming &#x2013; this words you might read a lot of times during last year, especially in JavaScript context. Today I&#x2019;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner.</p><p>So what is functional programming? You can find some definition in <a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank" rel="nofollow noreferrer noopener">Wikipedia</a>, but long story short, <strong>functional programming</strong> (FP) is a programming paradigm to write concise and readable code. JavaScript itself give developer freedom what coding style to use &#x2013; Object-Oriented (OOP), Procedural or Functional. But on the other side functions in JS are the <em>first-class citizen</em>. That means that functions could be pass as an argument to other functions. This is one of the primary conditions to write functional code.</p><p>But you may ask &#x2013; why we should make code functional? It is the reasonable question, and there are some cons that it brings:</p><ul><li>Reusable</li><li>Readable</li><li>Easy to test</li><li>Less error prone</li></ul><p>The main difference that classes operate with objects and its state, as well as other objects states, it is good and bad at the same time. Why? - Because you might need to synchronize states of different objects at runtime to control your application. Functional programming instead brings the idea that functions shouldn&#x2019;t change anything outside function scope. Such changes called <strong>side-effects</strong>.</p><p>OOP creates the connection between objects that results in problems in testing. In tests developers trying to separate each piece of functionality to avoid the impact of other modules. That means that you should mock dependencies, write more boilerplate code, etc. Functional programming instead forces you to write independent pieces of code, that also says that such code could be used in other places or even projects without any modifications.</p><p>Unfortunately, any application with user interface could be created without side-effects because you need to fetch data from backed, manipulate DOM-tree or even log something to console. All these actions also are side-effects and produce <strong>mutations</strong> &#x2013; data changes.</p><h2>Pure functions</h2><p>The functions that don&#x2019;t manipulate with any values outside its scope called <strong>pure functions</strong>. There are simple rules to write such functions:</p><ul><li>It should always return value</li><li>It should <strong>NOT</strong> change any data outside</li><li>It should always return the same result for the same passed arguments</li></ul><p>Looks simple, doesn&#x2019;t it? So the simple example of the pure function:</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Introduction to Functional JavaScript"><meta name="twitter:description" content="Functional programming - this words you might read a lot of times during last year, especially in JavaScript context. Today I&#39;ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner."><meta name="twitter:image" content="https://bobrov.dev/images/posts/introduction-to-functional-js/introduction-to-functional-js-og.jpg"><meta name="twitter:image:alt" content="Introduction to Functional JavaScript"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js.webp 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js.jpg 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet.webp 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet.jpg 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile.webp 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile.jpg 1x, /images/posts/introduction-to-functional-js/introduction-to-functional-js-mobile@2x.jpg 2x">
+      <img src="/images/posts/introduction-to-functional-js/introduction-to-functional-js.jpg" loading="eager" alt="Introduction to Functional JavaScript" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  Introduction to Functional JavaScript
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2017-03-19" class="post-info__date">
+                      19 March 2017
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/javascript" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">JavaScript</span>
+                      </a>
+                      <a href="/category/functional-programming" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Functional Programming</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Introduction to Functional JavaScript" data-share-text="Introduction to Functional JavaScript by @bobrov1989" data-share-url="https://bobrov.dev/blog/introduction-to-functional-js/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/introduction-to-functional-js/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>Functional programming – this words you might read a lot of times during last year, especially in JavaScript context. Today I’ll try to demystify its fundamental principles for newbies in easiest and beginner-friendly manner.</p>
+<p>So what is functional programming? You can find some definition in <a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank" rel="nofollow noreferrer noopener">Wikipedia</a>, but long story short, <strong>functional programming</strong> (FP) is a programming paradigm to write concise and readable code. JavaScript itself give developer freedom what coding style to use – Object-Oriented (OOP), Procedural or Functional. But on the other side functions in JS are the <em>first-class citizen</em>. That means that functions could be pass as an argument to other functions. This is one of the primary conditions to write functional code.</p>
+<p>But you may ask – why we should make code functional? It is the reasonable question, and there are some cons that it brings:</p>
+<ul><li>Reusable</li>
+<li>Readable</li>
+<li>Easy to test</li>
+<li>Less error prone</li>
+</ul>
+<p>The main difference that classes operate with objects and its state, as well as other objects states, it is good and bad at the same time. Why? - Because you might need to synchronize states of different objects at runtime to control your application. Functional programming instead brings the idea that functions shouldn’t change anything outside function scope. Such changes called <strong>side-effects</strong>.</p>
+<p>OOP creates the connection between objects that results in problems in testing. In tests developers trying to separate each piece of functionality to avoid the impact of other modules. That means that you should mock dependencies, write more boilerplate code, etc. Functional programming instead forces you to write independent pieces of code, that also says that such code could be used in other places or even projects without any modifications.</p>
+<p>Unfortunately, any application with user interface could be created without side-effects because you need to fetch data from backed, manipulate DOM-tree or even log something to console. All these actions also are side-effects and produce <strong>mutations</strong> – data changes.</p>
+<h2>Pure functions</h2>
+<p>The functions that don’t manipulate with any values outside its scope called <strong>pure functions</strong>. There are simple rules to write such functions:</p>
+<ul><li>It should always return value</li>
+<li>It should <strong>NOT</strong> change any data outside</li>
+<li>It should always return the same result for the same passed arguments</li>
+</ul>
+<p>Looks simple, doesn’t it? So the simple example of the pure function:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Always return 5.</span>
-</code></pre><p>You may say that it too easy, but here is the example how to easy broke the rules:</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You may say that it too easy, but here is the example how to easy broke the rules:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">impureAdd</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">impureAdd</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// return 5.</span>
-</code></pre><p>As you can see function make the same manipulation and returns the same result but it changes global variable <code>x</code> that is out of its scope. It this case if another function changed this variable result will be different, this means that function could return another value for the same passed argument &#x2013; it is not pure.</p><p>One of the features for which developers love ES2016 (also known as ES6) &#x2013; <em>arrow functions</em>, they provide short and expressive way to write such simple functions, also called <strong>lambda</strong>. Here is the pretified modern variand of <code>add</code> function:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+</code></pre>
+<p>As you can see function make the same manipulation and returns the same result but it changes global variable <code>x</code> that is out of its scope. It this case if another function changed this variable result will be different, this means that function could return another value for the same passed argument – it is not pure.</p>
+<p>One of the features for which developers love ES2016 (also known as ES6) – <em>arrow functions</em>, they provide short and expressive way to write such simple functions, also called <strong>lambda</strong>. Here is the pretified modern variand of <code>add</code> function:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
 <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 5</span>
-</code></pre><p>The same function written in one line (one-liner), I&#x2019;m loving it!</p><h2>Immutability</h2><p>Another important idea of FP that implies side-effects are reducing &#x2013; immutable data. The main purpose that value that has been assigned once can&#x2019;t change, and instead re-assigning value we should provide a new one.</p><p>JavaScript as universal language doesn&#x2019;t provide immutable data structures out-of-box. The only immutable primitive is a <code>String</code>. Whenever you modify the string, under the hood JS engine return you a completely new string. Here is the example:</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">&apos;Change This String&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The same function written in one line (one-liner), I’m loving it!</p>
+<h2>Immutability</h2>
+<p>Another important idea of FP that implies side-effects are reducing – immutable data. The main purpose that value that has been assigned once can’t change, and instead re-assigning value we should provide a new one.</p>
+<p>JavaScript as universal language doesn’t provide immutable data structures out-of-box. The only immutable primitive is a <code>String</code>. Whenever you modify the string, under the hood JS engine return you a completely new string. Here is the example:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'Change This String'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">var</span> noSpaces <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&apos; &apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> noSpaces <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> lowerStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Still same string `Change This String`.</span>
@@ -56,15 +296,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment">// Another modifies source string `change this string`.</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>lowerStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>Any method call on an original string modified source, every time new string created for the new variable. But if we try to do something with objects the result might be confusing.</p><p>One of the nice features that ES2015 brought to us is a <code>const</code> keyword. Its name looks like a <em>constant</em> and seems to mean immutability, but it only <strong>mean that you can&#x2019;t assign a completely new value to a variable defined with it</strong>. What it means in practice:</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> mutableObj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Any method call on an original string modified source, every time new string created for the new variable. But if we try to do something with objects the result might be confusing.</p>
+<p>One of the nice features that ES2015 brought to us is a <code>const</code> keyword. Its name looks like a <em>constant</em> and seems to mean immutability, but it only <strong>mean that you can’t assign a completely new value to a variable defined with it</strong>. What it means in practice:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> mutableObj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 mutableObj <span class="token operator">=</span> <span class="token punctuation">{</span>b<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// no errors.</span>
 
 <span class="token keyword">const</span> immutableObj <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token comment">// will throw TypeError: &quot;Assignment to constant variable&quot;.</span>
+<span class="token comment">// will throw TypeError: "Assignment to constant variable".</span>
 imuutableObj <span class="token operator">=</span> <span class="token punctuation">{</span>b<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre><p>But in other hand you can modify objects and no error will be thrown.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> immutable <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>But in other hand you can modify objects and no error will be thrown.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> immutable <span class="token operator">=</span> <span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">// no errors.</span>
 immutable<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
@@ -78,7 +323,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1, 2, 3, 4].</span>
-</code></pre><p>To make such objects really immutable, we need to prevent any modifications, changing existing values, adding new values. <code>Object</code> in JavaScript has a static method called <code>freeze</code> that prevent object mutations, but only in a shallow manner. Here is code proof:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> imm <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span><span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>To make such objects really immutable, we need to prevent any modifications, changing existing values, adding new values. <code>Object</code> in JavaScript has a static method called <code>freeze</code> that prevent object mutations, but only in a shallow manner. Here is code proof:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> imm <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span><span class="token punctuation">{</span>a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// no errors.</span>
 imm<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -94,15 +341,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
 obj<span class="token punctuation">.</span>arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// {arr: [1, 2, 3]} array was changed.</span>
-</code></pre><p>As you see <code>Object.freeze</code> doesn&#x2019;t provide deep object immutability. In such cases, you could use special immutable data structures provided by libraries like <a href="https://facebook.github.io/immutable-js/" target="_blank" rel="nofollow noreferrer noopener">ImmutableJS</a>. But in real projects, you only need such libraries to use in tests. Instead of including it in your production application you should propose a convention in your team to not mutate data, and proof this convention in unit tests.</p><h2>Readability</h2><p>Readability means that your code should be written in more expressive. In most situations, you should prefer ternary operators, replace switch statements, use <code>Array</code> methods to manipulate data instead using loops. But this not means that you should obfuscate code by hands, always think about how your code will be read and is it simple to realize what is going on. If you don&#x2019;t keep that in mind, your teammates will hate you and your code &#x1F620;. Below there are a bunch of how to DO and to DON&#x2019;T write functional code.</p><h3>if/else statements</h3><p>DON&#x2019;T: Write if/else for simple cases.</p><pre class="language-js"><code class="language-js"><span class="token comment">// - DON&apos;T.</span>
+</code></pre>
+<p>As you see <code>Object.freeze</code> doesn’t provide deep object immutability. In such cases, you could use special immutable data structures provided by libraries like <a href="https://facebook.github.io/immutable-js/" target="_blank" rel="nofollow noreferrer noopener">ImmutableJS</a>. But in real projects, you only need such libraries to use in tests. Instead of including it in your production application you should propose a convention in your team to not mutate data, and proof this convention in unit tests.</p>
+<h2>Readability</h2>
+<p>Readability means that your code should be written in more expressive. In most situations, you should prefer ternary operators, replace switch statements, use <code>Array</code> methods to manipulate data instead using loops. But this not means that you should obfuscate code by hands, always think about how your code will be read and is it simple to realize what is going on. If you don’t keep that in mind, your teammates will hate you and your code 😠. Below there are a bunch of how to DO and to DON’T write functional code.</p>
+<h3>if/else statements</h3>
+<p>DON’T: Write if/else for simple cases.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// - DON'T.</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>DO: Use ternary operators for simple cases.</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-</code></pre><p>DON&#x2019;T: Use multiple ternary operators.</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> b <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> c <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
-</code></pre><p>DO: Use if/else for sibling statements.</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> a<span class="token punctuation">;</span>
+</code></pre>
+<p>DO: Use ternary operators for simple cases.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> b <span class="token operator">=</span> a <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</code></pre>
+<p>DON’T: Use multiple ternary operators.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> b <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">?</span> c <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">2</span> <span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p>DO: Use if/else for sibling statements.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> a<span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -113,30 +372,95 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span> esle <span class="token punctuation">{</span>
   a <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><h3>switch statements</h3><p>DON&#x2019;T: Use switch for simple value assignment.</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> result<span class="token punctuation">;</span>
+</code></pre>
+<h3>switch statements</h3>
+<p>DON’T: Use switch for simple value assignment.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">var</span> result<span class="token punctuation">;</span>
 
 <span class="token keyword">switch</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">case</span> <span class="token string">&apos;someValue&apos;</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> <span class="token string">&apos;something&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">'someValue'</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> <span class="token string">'something'</span><span class="token punctuation">;</span>
     <span class="token keyword">break</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">case</span> <span class="token string">&apos;otherValue&apos;</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> <span class="token string">&apos;another&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">'otherValue'</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> <span class="token string">'another'</span><span class="token punctuation">;</span>
     <span class="token keyword">break</span><span class="token punctuation">;</span>
 
   <span class="token keyword">default</span><span class="token punctuation">:</span>
-    result <span class="token operator">=</span> <span class="token string">&apos;default&apos;</span><span class="token punctuation">;</span>
+    result <span class="token operator">=</span> <span class="token string">'default'</span><span class="token punctuation">;</span>
     <span class="token keyword">break</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>DO: Use object literal for simple value assigment.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>
-  someValue<span class="token punctuation">:</span> <span class="token string">&apos;something&apos;</span><span class="token punctuation">,</span>
-  otherValue<span class="token punctuation">:</span> <span class="token string">&apos;another&apos;</span>
-<span class="token punctuation">}</span><span class="token punctuation">[</span>value<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">&apos;default&apos;</span><span class="token punctuation">;</span>
-</code></pre><p>The result will be the same as in the previous example with <code>switch</code>, but it is shorter and more readable. You trying to get object value by the key provided in <code>value</code> variable, if value not found it returns <code>undefined</code> and the default value will be assigned.</p><h3>Loops</h3><p>DON&#x2019;T: Use loops for simple data modification.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<p>DO: Use object literal for simple value assigment.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">{</span>
+  someValue<span class="token punctuation">:</span> <span class="token string">'something'</span><span class="token punctuation">,</span>
+  otherValue<span class="token punctuation">:</span> <span class="token string">'another'</span>
+<span class="token punctuation">}</span><span class="token punctuation">[</span>value<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">'default'</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The result will be the same as in the previous example with <code>switch</code>, but it is shorter and more readable. You trying to get object value by the key provided in <code>value</code> variable, if value not found it returns <code>undefined</code> and the default value will be assigned.</p>
+<h3>Loops</h3>
+<p>DON’T: Use loops for simple data modification.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator"><</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>DO: Use array methods and try not to mutate data.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> doubled <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i <span class="token operator">=&gt;</span> i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>With arrow functions, such array manipulations become short and expressive.</p><h2>Summary</h2><p>There were fundamental principles of Functional Programming. It was straightforward, isn&#x2019;t it? After you feel good about this one, you could start to dive deeper. In the next article, I&#x2019;ll explain how to handle arrays modifications functionally. Stay tuned and write your questions in the comments. Let the functional force be with you &#x1F60E;.</p></section></article><div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget"><div id="commento"></div></div></main><div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"><div class="mdl-snackbar__text"></div><button type="button" class="mdl-snackbar__action"></button></div><footer role="contentinfo" class="mdl-mini-footer page-footer"><section class="mdl-mini-footer--left-section page-footer__left-section"><a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Follow Vitalii Bobrov on Twitter </a><a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#github"/></svg> View Vitalii Bobrov profile on GitHub</a></section><section class="mdl-copyright"><p>&copy; 2020 Bobrov Dev</p></section><section class="mdl-mini-footer--right-section page-footer__right-section"></section></footer></div><div class="mdl-layout__obfuscator"></div></div><script src="/js/main.min.js" async defer></script><script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+</code></pre>
+<p>DO: Use array methods and try not to mutate data.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> doubled <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i <span class="token operator">=></span> i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>With arrow functions, such array manipulations become short and expressive.</p>
+<h2>Summary</h2>
+<p>There were fundamental principles of Functional Programming. It was straightforward, isn’t it? After you feel good about this one, you could start to dive deeper. In the next article, I’ll explain how to handle arrays modifications functionally. Stay tuned and write your questions in the comments. Let the functional force be with you 😎.</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>

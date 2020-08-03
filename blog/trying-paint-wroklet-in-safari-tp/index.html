@@ -1,4 +1,59 @@
-<!doctype html><html lang="en"><head><title>Trying Paint Worklet in Safari Technology Preview | Bobrov Dev</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass &lt;image&gt; as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn&#x27;t that easy."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" href="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" hreflang="en"><link rel="canonical" href="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/"><meta name="msapplication-tap-highlight" content="no"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Bobrov Dev"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Bobrov Dev"><meta name="msapplication-TileColor" content="#008ba3"><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16"><meta name="theme-color" content="#008ba3"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"><link rel="stylesheet" href="/css/styles.css"><meta property="fb:app_id" content="393821434298248"><meta property="article:author" content="https://www.facebook.com/bobrov1989"><meta property="og:url" content="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/"><meta property="og:type" content="article"><meta property="og:title" content="Trying Paint Worklet in Safari Technology Preview"><meta property="og:description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass &lt;image&gt; as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn&#x27;t that easy."><meta property="og:image" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg"><meta property="og:image:url" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><script type="application/ld+json">{
+<!DOCTYPE html><html lang="en"><head>
+    <title>Trying Paint Worklet in Safari Technology Preview | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass <image> as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn't that easy.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" hreflang="en">
+    <link rel="canonical" href="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Trying Paint Worklet in Safari Technology Preview">
+    <meta property="og:description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass <image> as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn't that easy.">
+    <meta property="og:image" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg">
+    <meta property="og:image:url" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "mainEntityOfPage": "True",
@@ -23,82 +78,331 @@
           }
         },
         "description": "As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass &lt;image&gt; as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn&#x27;t that easy."
-      }</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script><script>if (navigator.doNotTrack !== '1') {
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
         gtag('config', 'UA-90372372-1');
-      }</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Trying Paint Worklet in Safari Technology Preview"><meta name="twitter:description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass &lt;image&gt; as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn&#39;t that easy."><meta name="twitter:image" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg"><meta name="twitter:image:alt" content="Trying Paint Worklet in Safari Technology Preview"></head><body class="mdlext-dark-color-theme mdl-layout__container"><div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout"><header class="mdl-layout__header is-casting-shadow" role="banner"><div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false"><svg class="mdl-svg drawer-icon"><use xlink:href="/images/sprite.svg#menu"/></svg> Menu</div><div class="mdl-layout__header-row"><span class="mdl-layout-title"><a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a></span><div class="mdl-layout-spacer"><a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow"><picture class="site-logo__picture"><source media="(min-width: 1025px)" srcset="/images/logo.webp, /images/logo@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/logo.png, /images/logo@2x.png 2x"><source media="(min-width: 768px)" srcset="/images/logo-tablet.webp, /images/logo-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/logo-tablet.png, /images/logo-tablet@2x.png 2x"><source srcset="/images/logo-mobile.webp, /images/logo-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/logo-mobile.png, /images/logo-mobile@2x.png 2x"><img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img"></picture></a></div><nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Bobrov Dev</span><nav class="mdl-navigation" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About </a><button class="mdl-button mdl-button--raised js-add-to-home" disabled>Add to home screen</button></nav></div><div class="mdl-layout__content js-lazy-container"><main class="mdl-grid posts-grid"><article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col"><header class="mdl-card__media post__media"><picture class="safe-picture"><source media="(min-width: 1025px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.webp, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.jpg, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp@2x.jpg 2x"><source media="(min-width: 768px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet.webp, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet.jpg, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet@2x.jpg 2x"><source srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile.webp, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile.jpg, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile@2x.jpg 2x"><img src="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.jpg" loading="eager" alt="Trying Paint Worklet in Safari Technology Preview" class="safe-picture__img"></picture><div class="safe-gradient"></div><h1 class="post__title">Trying Paint Worklet in Safari Technology Preview</h1></header><section class="post__info post-info"><div class="post-info__data"><picture class="post-info__avatar"><source srcset="/images/authors/bobrov/avatar.webp, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp"><source srcset="/images/authors/bobrov/avatar.jpg, /images/authors/bobrov/avatar@2x.jpg 2x"><img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar"></picture><div class="post-info__data-wrapper"><div class="post-info__author">Vitalii Bobrov</div><time datetime="2018-12-21" class="post-info__date">21 December 2018</time></div></div><div class="post-info__side"><div class="post-info__categories"><a href="/category/tips-and-tricks" class="mdl-chip post-info__category"><span class="mdl-chip__text">Tips &amp; Tricks</span> </a><a href="/category/houdini" class="mdl-chip post-info__category"><span class="mdl-chip__text">Houdini</span></a></div></div></section><div class="mdl-card__menu post-share"><button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Trying Paint Worklet in Safari Technology Preview" data-share-text="Trying Paint Worklet in Safari Technology Preview by @bobrov1989" data-share-url="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/"><span class="ripple-ink"></span> <svg class="mdl-svg post-share__icon"><use xlink:href="/images/sprite.svg#share"/></svg> Share post</button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu"><li class="mdl-menu__item share-menu__item"><a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#facebook"/></svg> Facebook</a></li><li class="mdl-menu__item share-menu__item"><a href="https://twitter.com/home?status=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Twitter</a></li><li class="mdl-menu__item share-menu__item"><a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#linkedin"/></svg> LinkedIn</a></li></ul></div><section class="post__contents"><p>As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news &#x2013; it is possible to pass <code>&lt;image&gt;</code> as an input property to the Paint Worklet &#x1F929;. I wanted to play with it here and now. Unfortunately, it wasn&#x2019;t that easy.</p><h2>Initial setup</h2><p>the first challenge was to make an initial setup &#x1F913;. You can&#x2019;t find Safari TP in App Store, you need to download it manually from <a href="https://developer.apple.com/safari/download/" target="_blank" rel="nofollow noreferrer noopener">developer.apple.com</a>. The good thing is that it should get updates from the App Store. Then you need to find how to enable experimental API. As a Chrome user I&#x2019;ve started to look for some flags settings tab, but no luck. To enable Paint API in Safari TP you need to go to <em>&#x201C;Develop&#x201D;</em> &#x27A1; <em>&#x201C;Experimental Features&#x201D;</em> menu and toggle <em>&#x201C;CSS Painting API&#x201D;</em> option. Before I was going to start my experiments, I decided to try demos I&#x2019;ve <a href="https://bobrov.dev/blog/exploring-the-css-paint-api/">created</a> before. They were working in Chrome, but some of them need Chrome Canary because some of the other Houdini parts are used there. So I&#x2019;ve navigated to the basic <a href="https://bobrov.dev/css-paint-demos/hello-world/">Paint Worklet demo</a>&#x2026; and it was dead &#x1F62D;.</p><h2>Dead demos inquiry</h2><p>Instead of four circles, there was the white background on the screen. That means that fallback value hasn&#x2019;t applied, because I&#x2019;ve used black color for it. That is interesting &#x1F9D0;. When I&#x2019;ve opened the inspector, I saw that background with <code>paint</code> function was applied to the element. Then I opened the console and there was an error &#x2013; <code>ReferenceError: Can&apos;t find variable: paint</code>. That was confusing, I haven&#x2019;t used any variable called &#x201C;paint&#x201D; in the Worklet class definition. So I&#x2019;ve tried to load it manually in the console:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>And got the same error again. Hm, <code>addModule</code> method should accept the path to the file with the custom painter implementation. There is a security-related restriction, similar to Web and Service Workers, that all Worklets code should be written in a separate file. They have completely different JavaScript context and shouldn&#x2019;t have access to any global data. So I&#x2019;ve tried different path variation:</p><pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">&apos;/paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>I&#x2019;ve got the error again, but a different one &#x2013; <code>SyntaxError: Unterminated regular expression literal &apos;/paint.js&apos;</code>. Seems that the function tried to interpret path as a code. There were links to the changed Safari source code in the <a href="https://webkit.org/blog/8547/release-notes-for-safari-technology-preview-72/" target="_blank" rel="nofollow noreferrer noopener">release notes</a>. So I&#x2019;ve decided to find an explanation there. Like Chrome, Safari wrote in C++. I&#x2019;m not a big expert in this language, but at least can understand what is going on.</p><h2>Source code Safari</h2><p>I&#x2019;ve started exploration opening links to changes related to Paint API. The first thing I checked was tests as they are the best source of truth for the current implementation. They were just HTML files and looked like that (I&#x2019;ve made example shorter to show the main points):</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>code<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/worklet<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Trying Paint Worklet in Safari Technology Preview"><meta name="twitter:description" content="As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news -- it is possible to pass &lt;image&gt; as an input property to the Paint Worklet. I wanted to play with it here and now. Unfortunately, it wasn&#39;t that easy."><meta name="twitter:image" content="https://bobrov.dev/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-og.jpg"><meta name="twitter:image:alt" content="Trying Paint Worklet in Safari Technology Preview"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.webp 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.jpg 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet.webp 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet.jpg 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile.webp 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile.jpg 1x, /images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp-mobile@2x.jpg 2x">
+      <img src="/images/posts/trying-paint-wroklet-in-safari-tp/trying-paint-wroklet-in-safari-tp.jpg" loading="eager" alt="Trying Paint Worklet in Safari Technology Preview" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  Trying Paint Worklet in Safari Technology Preview
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2018-12-21" class="post-info__date">
+                      21 December 2018
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/tips-and-tricks" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Tips & Tricks</span>
+                      </a>
+                      <a href="/category/houdini" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Houdini</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Trying Paint Worklet in Safari Technology Preview" data-share-text="Trying Paint Worklet in Safari Technology Preview by @bobrov1989" data-share-url="https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/trying-paint-wroklet-in-safari-tp/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>As a big fan of CSS Houdini, I was so happy that Safari team decided to take Paint API in development. The first implementation was shipped with Safari Technology Preview (TP) 69. But in the version 72 release the changelog I saw exciting news – it is possible to pass <code><image></image></code> as an input property to the Paint Worklet 🤩. I wanted to play with it here and now. Unfortunately, it wasn’t that easy.</p>
+<h2>Initial setup</h2>
+<p>the first challenge was to make an initial setup 🤓. You can’t find Safari TP in App Store, you need to download it manually from <a href="https://developer.apple.com/safari/download/" target="_blank" rel="nofollow noreferrer noopener">developer.apple.com</a>. The good thing is that it should get updates from the App Store. Then you need to find how to enable experimental API. As a Chrome user I’ve started to look for some flags settings tab, but no luck. To enable Paint API in Safari TP you need to go to <em>“Develop”</em> ➡ <em>“Experimental Features”</em> menu and toggle <em>“CSS Painting API”</em> option. Before I was going to start my experiments, I decided to try demos I’ve <a href="https://bobrov.dev/blog/exploring-the-css-paint-api/">created</a> before. They were working in Chrome, but some of them need Chrome Canary because some of the other Houdini parts are used there. So I’ve navigated to the basic <a href="https://bobrov.dev/css-paint-demos/hello-world/">Paint Worklet demo</a>… and it was dead 😭.</p>
+<h2>Dead demos inquiry</h2>
+<p>Instead of four circles, there was the white background on the screen. That means that fallback value hasn’t applied, because I’ve used black color for it. That is interesting 🧐. When I’ve opened the inspector, I saw that background with <code>paint</code> function was applied to the element. Then I opened the console and there was an error – <code>ReferenceError: Can't find variable: paint</code>. That was confusing, I haven’t used any variable called “paint” in the Worklet class definition. So I’ve tried to load it manually in the console:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>And got the same error again. Hm, <code>addModule</code> method should accept the path to the file with the custom painter implementation. There is a security-related restriction, similar to Web and Service Workers, that all Worklets code should be written in a separate file. They have completely different JavaScript context and shouldn’t have access to any global data. So I’ve tried different path variation:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">'/paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>I’ve got the error again, but a different one – <code>SyntaxError: Unterminated regular expression literal '/paint.js'</code>. Seems that the function tried to interpret path as a code. There were links to the changed Safari source code in the <a href="https://webkit.org/blog/8547/release-notes-for-safari-technology-preview-72/" target="_blank" rel="nofollow noreferrer noopener">release notes</a>. So I’ve decided to find an explanation there. Like Chrome, Safari wrote in C++. I’m not a big expert in this language, but at least can understand what is going on.</p>
+<h2>Source code Safari</h2>
+<p>I’ve started exploration opening links to changes related to Paint API. The first thing I checked was tests as they are the best source of truth for the current implementation. They were just HTML files and looked like that (I’ve made example shorter to show the main points):</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>code<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/worklet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
 <span class="token keyword">class</span> <span class="token class-name">MyPaint</span> <span class="token punctuation">{</span>
   <span class="token function">paint</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> geom<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">&quot;red&quot;</span><span class="token punctuation">;</span>
+    ctx<span class="token punctuation">.</span>fillStyle <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
     ctx<span class="token punctuation">.</span><span class="token function">fillRect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> geom<span class="token punctuation">.</span>width<span class="token punctuation">,</span> geom<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-<span class="token function">registerPaint</span><span class="token punctuation">(</span><span class="token string">&apos;my-paint&apos;</span><span class="token punctuation">,</span> MyPaint<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token function">registerPaint</span><span class="token punctuation">(</span><span class="token string">'my-paint'</span><span class="token punctuation">,</span> MyPaint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">script</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/javascript<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
   <span class="token function">importWorklet</span><span class="token punctuation">(</span>
     <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">,</span>
-    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;code&apos;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'code'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent
   <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">script</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style language-css">
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
   <span class="token selector"><span class="token id">#paint</span> </span><span class="token punctuation">{</span>
     <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">paint</span><span class="token punctuation">(</span>my-paint<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">150</span>px<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">150</span>px<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">style</span><span class="token punctuation">></span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>paint<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-</code></pre><p>The Worklet code was stored in the script tag with custom mime type &#x201C;text/worklet&#x201D; and then the text content was passed to the <code>importWorklet</code> helper. It confirmed my guesses and I continued with source code lookup. After some time I&#x2019;ve found the great comment in <a href="https://trac.webkit.org/browser/webkit/trunk/Source/WebCore/worklets/Worklet.cpp?rev=239067" target="_blank" rel="nofollow noreferrer noopener">Worklet.cpp</a> file:</p><pre class="language-js"><code class="language-js"><span class="token comment">// FIXME: We should download the source from the URL</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation"><</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>paint<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">div</span><span class="token punctuation">></span></span>
+</span></span></span></span></code></pre>
+<p>The Worklet code was stored in the script tag with custom mime type “text/worklet” and then the text content was passed to the <code>importWorklet</code> helper. It confirmed my guesses and I continued with source code lookup. After some time I’ve found the great comment in <a href="https://trac.webkit.org/browser/webkit/trunk/Source/WebCore/worklets/Worklet.cpp?rev=239067" target="_blank" rel="nofollow noreferrer noopener">Worklet.cpp</a> file:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// FIXME: We should download the source from the URL</span>
 <span class="token comment">// https://bugs.webkit.org/show_bug.cgi?id=191136</span>
-</code></pre><p>So I&#x2019;ve followed the <a href="https://bugs.webkit.org/show_bug.cgi?id=191136" target="_blank" rel="nofollow noreferrer noopener">link to the bug</a> in WebKit Bugzilla. The comment explained everything:</p><blockquote><p>Currently, a call to Worklet::addModule(String url) uses the url as code. It should fetch the script asynchronously, following the spec. &#x2013; Justin Michaud 2018-10-31 15:12:30 PDT</p></blockquote><p>Instead of fetching the file <code>addModule</code> method parsed the code from a string &#x1F926;&#x200D;&#x2642;&#xFE0F;.</p><h2>Workaround</h2><p>My finding meant that I need to transform my JS files with painters into a string, but for Safari only. Until they will implement the method according to the <a href="https://www.w3.org/TR/css-paint-api-1/" target="_blank" rel="nofollow noreferrer noopener">spec</a>. There are a few possible solutions:</p><ol><li>Write code as a string &#x1F605;</li><li>Write code inside script tag with a custom mime type &#x1F921;</li><li>Fetch JS files manually and transform to a string &#x1F920;</li></ol><p>I decided to go with the third option. I want to detect Safari browser, made a request for a script, and convert it to a string.</p><h3>Detect Safari</h3><p>In the current version of demos, I&#x2019;ve used feature detection, before registering Paint Worklet:</p><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&apos;paintWorklet&apos;</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>So I’ve followed the <a href="https://bugs.webkit.org/show_bug.cgi?id=191136" target="_blank" rel="nofollow noreferrer noopener">link to the bug</a> in WebKit Bugzilla. The comment explained everything:</p>
+<blockquote><p>Currently, a call to Worklet::addModule(String url) uses the url as code. It should fetch the script asynchronously, following the spec. – Justin Michaud 2018-10-31 15:12:30 PDT</p>
+</blockquote>
+<p>Instead of fetching the file <code>addModule</code> method parsed the code from a string 🤦‍♂️.</p>
+<h2>Workaround</h2>
+<p>My finding meant that I need to transform my JS files with painters into a string, but for Safari only. Until they will implement the method according to the <a href="https://www.w3.org/TR/css-paint-api-1/" target="_blank" rel="nofollow noreferrer noopener">spec</a>. There are a few possible solutions:</p>
+<ol><li>Write code as a string 😅</li>
+<li>Write code inside script tag with a custom mime type 🤡</li>
+<li>Fetch JS files manually and transform to a string 🤠</li>
+</ol>
+<p>I decided to go with the third option. I want to detect Safari browser, made a request for a script, and convert it to a string.</p>
+<h3>Detect Safari</h3>
+<p>In the current version of demos, I’ve used feature detection, before registering Paint Worklet:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'paintWorklet'</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>After that, I need to detect Safari browser. After a short investigation, I&#x2019;ve used the next user agent check snippet:</p><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&apos;paintWorklet&apos;</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;Safari&apos;</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;Chrome&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>After that, I need to detect Safari browser. After a short investigation, I’ve used the next user agent check snippet:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'paintWorklet'</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'Safari'</span><span class="token punctuation">)</span>
+    <span class="token operator">&&</span> <span class="token operator">!</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'Chrome'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// Safari TP fix will be here.</span>
   <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><p>This is slightly confusing, but Safari&#x2019;s user agent should contain &quot;Safari&quot;, but not &quot;Chrome&quot;. Because Chrome has both of them &#x1F923;.</p><h3>Request the file</h3><p>This is the easiest task, as Safari support most of the modern JavaScrip features. I used Fetch API to request the file. Then I parsed the response as <code>Blob</code>:</p><pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This is slightly confusing, but Safari’s user agent should contain "Safari", but not "Chrome". Because Chrome has both of them 🤣.</p>
+<h3>Request the file</h3>
+<p>This is the easiest task, as Safari support most of the modern JavaScrip features. I used Fetch API to request the file. Then I parsed the response as <code>Blob</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> blob <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">blob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>We are not allowed to use <code>await</code> outside asynchronous functions, that is why I wrapped the call in async IIFE.</p><h3>Convert file to a string</h3><p>The simplest way to transform <code>Blob</code> into a string, I&#x2019;ve found, was to use File Reader API. The semantics of this API looks different from modern ones as it is pretty old. First, we need to create <code>FileReader</code> instance. Then listen to the &#x201C;load&#x201D; event. Only after that, we can start the reading process:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>We are not allowed to use <code>await</code> outside asynchronous functions, that is why I wrapped the call in async IIFE.</p>
+<h3>Convert file to a string</h3>
+<p>The simplest way to transform <code>Blob</code> into a string, I’ve found, was to use File Reader API. The semantics of this API looks different from modern ones as it is pretty old. First, we need to create <code>FileReader</code> instance. Then listen to the “load” event. Only after that, we can start the reading process:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-reader<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;load&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+reader<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
  <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span>reader<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 reader<span class="token punctuation">.</span><span class="token function">readAsText</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>This was the final stage after that almost all demos worked in Safari &#x1F389;. Some issues still there and I&#x2019;m going to fix them in the nearest time. It was a fun journey, but as I&#x2019;ve found in the source code, Safari team implemented a lot of features that are not finished in Chrome Canary. But this is a completely different story and I will definitely share my experiments in the nearest future. Here is the resulting loading code:</p><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">&apos;paintWorklet&apos;</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>This was the final stage after that almost all demos worked in Safari 🎉. Some issues still there and I’m going to fix them in the nearest time. It was a fun journey, but as I’ve found in the source code, Safari team implemented a lot of features that are not finished in Chrome Canary. But this is a completely different story and I will definitely share my experiments in the nearest future. Here is the resulting loading code:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'paintWorklet'</span> <span class="token keyword">in</span> <span class="token constant">CSS</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token comment">// Safari TP fix.</span>
  <span class="token comment">// Safari only accepts source code as a string instead file path.</span>
- <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;Safari&apos;</span><span class="token punctuation">)</span>
-   <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;Chrome&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'Safari'</span><span class="token punctuation">)</span>
+   <span class="token operator">&&</span> <span class="token operator">!</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'Chrome'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-     <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token keyword">const</span> blob <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">blob</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-     reader<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;load&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+     reader<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
        <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span>reader<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
      reader<span class="token punctuation">.</span><span class="token function">readAsText</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-   <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">&apos;paint.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token constant">CSS</span><span class="token punctuation">.</span>paintWorklet<span class="token punctuation">.</span><span class="token function">addModule</span><span class="token punctuation">(</span><span class="token string">'paint.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><h2>Conclusion</h2><p>Making something undocumented and experimental is always a nice way to explore the Web platform APIs. And the most important it learns us to keep comments and tests up-to-date as they are the main source of truth. Have fun &#x1F47B;!</p></section></article><div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget"><div id="commento"></div></div></main><div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"><div class="mdl-snackbar__text"></div><button type="button" class="mdl-snackbar__action"></button></div><footer role="contentinfo" class="mdl-mini-footer page-footer"><section class="mdl-mini-footer--left-section page-footer__left-section"><a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Follow Vitalii Bobrov on Twitter </a><a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#github"/></svg> View Vitalii Bobrov profile on GitHub</a></section><section class="mdl-copyright"><p>&copy; 2020 Bobrov Dev</p></section><section class="mdl-mini-footer--right-section page-footer__right-section"></section></footer></div><div class="mdl-layout__obfuscator"></div></div><script src="/js/main.min.js" async defer></script><script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+</code></pre>
+<h2>Conclusion</h2>
+<p>Making something undocumented and experimental is always a nice way to explore the Web platform APIs. And the most important it learns us to keep comments and tests up-to-date as they are the main source of truth. Have fun 👻!</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>

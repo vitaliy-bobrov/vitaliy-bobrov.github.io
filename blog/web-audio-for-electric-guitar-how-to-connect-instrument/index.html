@@ -1,4 +1,59 @@
-<!doctype html><html lang="en"><head><title>Web Audio for Electric Guitar: How to Connect Instrument | Bobrov Dev</title><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="alternate" href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" hreflang="en"><link rel="canonical" href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/"><meta name="msapplication-tap-highlight" content="no"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Bobrov Dev"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Bobrov Dev"><meta name="msapplication-TileColor" content="#008ba3"><link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png"><link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32"><link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16"><meta name="theme-color" content="#008ba3"><link rel="manifest" href="/manifest.json"><meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y"><link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"><link rel="stylesheet" href="/css/styles.css"><meta property="fb:app_id" content="393821434298248"><meta property="article:author" content="https://www.facebook.com/bobrov1989"><meta property="og:url" content="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/"><meta property="og:type" content="article"><meta property="og:title" content="Web Audio for Electric Guitar: How to Connect Instrument"><meta property="og:description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume."><meta property="og:image" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg"><meta property="og:image:url" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><script type="application/ld+json">{
+<!DOCTYPE html><html lang="en"><head>
+    <title>Web Audio for Electric Guitar: How to Connect Instrument | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" hreflang="en">
+    <link rel="canonical" href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Web Audio for Electric Guitar: How to Connect Instrument">
+    <meta property="og:description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume.">
+    <meta property="og:image" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg">
+    <meta property="og:image:url" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "mainEntityOfPage": "True",
@@ -23,19 +78,207 @@
           }
         },
         "description": "Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume."
-      }</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script><script>if (navigator.doNotTrack !== '1') {
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
     
         gtag('config', 'UA-90372372-1');
-      }</script><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Web Audio for Electric Guitar: How to Connect Instrument"><meta name="twitter:description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume."><meta name="twitter:image" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg"><meta name="twitter:image:alt" content="Web Audio for Electric Guitar: How to Connect Instrument"></head><body class="mdlext-dark-color-theme mdl-layout__container"><div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout"><header class="mdl-layout__header is-casting-shadow" role="banner"><div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false"><svg class="mdl-svg drawer-icon"><use xlink:href="/images/sprite.svg#menu"/></svg> Menu</div><div class="mdl-layout__header-row"><span class="mdl-layout-title"><a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a></span><div class="mdl-layout-spacer"><a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow"><picture class="site-logo__picture"><source media="(min-width: 1025px)" srcset="/images/logo.webp, /images/logo@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/logo.png, /images/logo@2x.png 2x"><source media="(min-width: 768px)" srcset="/images/logo-tablet.webp, /images/logo-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/logo-tablet.png, /images/logo-tablet@2x.png 2x"><source srcset="/images/logo-mobile.webp, /images/logo-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/logo-mobile.png, /images/logo-mobile@2x.png 2x"><img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img"></picture></a></div><nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About</a></nav></div></header><div class="mdl-layout__drawer"><span class="mdl-layout-title">Bobrov Dev</span><nav class="mdl-navigation" aria-label="Main navigation"><a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a> <a class="mdl-navigation__link" href="https://bobrov.dev/speaker/">Speaker </a><a class="mdl-navigation__link" href="https://bobrov.dev/about/">About </a><button class="mdl-button mdl-button--raised js-add-to-home" disabled>Add to home screen</button></nav></div><div class="mdl-layout__content js-lazy-container"><main class="mdl-grid posts-grid"><article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col"><header class="mdl-card__media post__media"><picture class="safe-picture"><source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.webp, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument@2x.webp 2x" type="image/webp"><source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.jpg, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument@2x.jpg 2x"><source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet.webp, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet@2x.webp 2x" type="image/webp"><source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet.jpg, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet@2x.jpg 2x"><source srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile.webp, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile@2x.webp 2x" type="image/webp"><source srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile.jpg, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile@2x.jpg 2x"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.jpg" loading="eager" alt="Web Audio for Electric Guitar: How to Connect Instrument" class="safe-picture__img"></picture><div class="safe-gradient"></div><h1 class="post__title">Web Audio for Electric Guitar: How to Connect Instrument</h1></header><section class="post__info post-info"><div class="post-info__data"><picture class="post-info__avatar"><source srcset="/images/authors/bobrov/avatar.webp, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp"><source srcset="/images/authors/bobrov/avatar.jpg, /images/authors/bobrov/avatar@2x.jpg 2x"><img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar"></picture><div class="post-info__data-wrapper"><div class="post-info__author">Vitalii Bobrov</div><time datetime="2019-06-11" class="post-info__date">11 June 2019</time></div></div><div class="post-info__side"><div class="post-info__categories"><a href="/category/guides" class="mdl-chip post-info__category"><span class="mdl-chip__text">Guides</span> </a><a href="/category/web-audio" class="mdl-chip post-info__category"><span class="mdl-chip__text">Web Audio</span></a></div></div></section><div class="mdl-card__menu post-share"><button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Web Audio for Electric Guitar: How to Connect Instrument" data-share-text="Web Audio for Electric Guitar: How to Connect Instrument by @bobrov1989" data-share-url="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/"><span class="ripple-ink"></span> <svg class="mdl-svg post-share__icon"><use xlink:href="/images/sprite.svg#share"/></svg> Share post</button><ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu"><li class="mdl-menu__item share-menu__item"><a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#facebook"/></svg> Facebook</a></li><li class="mdl-menu__item share-menu__item"><a href="https://twitter.com/home?status=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Twitter</a></li><li class="mdl-menu__item share-menu__item"><a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener"><svg class="share-menu__icon"><use xlink:href="/images/sprite.svg#linkedin"/></svg> LinkedIn</a></li></ul></div><section class="post__contents"><p>Modern Web becomes more and more powerful, especially with APIs giving developers access to hardware. One of such API &#x2013; Web Audio. It gives you a set of low-level features to generate or process music right in your browser. Today I want to show you how to connect your electric guitar &#x1F3B8; (or any other electric instrument with wire connection, ex. bass) in a browser and control its volume level.</p><p><em>This post is a part of &#x201C;Web Audio for Electric Guitar&#x201D; series, check out other posts as well!</em></p><h3 class="post__series">Web Audio for Electric Guitar:</h3><ol class="post__series"><li>How to Connect Instrument &#x2013; Current</li><li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-cabinet-emulation/">Cabinet Emulation</a></li><li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion">Distortion</a></li></ol><p>I am playing a bunch of instruments, including some very unusual, like <a href="https://en.wikipedia.org/wiki/Bandura" target="_blank" rel="nofollow noreferrer noopener">bandura</a> &#x1F92F;, but my favorite one is a guitar. At my teenage years, I&#x2019;ve used to play at punk-rock bands &#x1F918; at school and university. I&#x2019;m not a professional guitarist, and it is just my hobby that helps to relax and clean my mind after work. Web Audio allowed me to combine programming and music, so I&#x2019;ve started experimenting with it. The very first task to do that was how to connect my instrument to the laptop.</p><p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/punk-rock-band.jpg" alt="Me playing punk rock at age of 16"></p><h2>Hardware</h2><p>Before writing any code, you need a few things: a laptop, an instrument (electric guitar in my case) and an audio interface. The last part is crucial. Of course, you can plug your instrument directly to the audio input of your computer, but it has a bunch of downsides. First, it might require an adapter. Usually, laptops have only 3.5mm jack, but 6.4mm cables used for instruments. Second, the quality of built-in audio cards is not usually suitable for playing music &#x2013; in most cases, producers think that users use it for music, movies, and games. You should expect a high latency of an audio stream. Moreover, the last argument in favor of functional interface, that build-in solutions might be damaged on hard input levels. I did that when I was young &#x1F631;.</p><p>Fortunately, you can buy a cheap and good-to-start device just for 20-25$. I&#x2019;m using the most popular and quite cheap one &#x2013; Behringer UCG-102 Guitar Link (this is not an advertisement!). It gives a low latency, has 6.4mm jack input and output, connects via USB and doesn&#x2019;t require any particular setup to work on Mac (on Windows you might need to install <code>asio4all</code> driver to achieve good results). You can see it among my devices on the photo below.</p><p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/web-audio-kit.jpg" alt="My Web Audio devices: Squier by Fender Mustang, Behringer UCG-102, MacBook Pro, cables, picks"></p><p>You can buy something more fancy and better, but this audio interface is good to start with, you can always upgrade it if you ever need it.</p><p>You need to connect your device to the computer, connect the instrument to the interface. Then you need to make sure that your system audio input and output setup is correct. You must select an external audio card as input and select built-in one as an output.</p><p><em>Note: if you want to use Bluetooth headphones to play, I&#x2019;d like to recommend to use an only wired connection, at least when I used Marshall MID the latency was so huge that I couldn&#x2019;t play anything, they worked fine for me to listen to the music. It might be only my specific problem, but when trying to use Web Audio at first time try not to use wireless speakers or headphones, as they might add latency and make you think Web Audio API to be slow.</em></p><h2>Web Audio Context</h2><p>Before you request user audio input, you need to create a Web Audio context &#x2013; the main point to create any nodes and work with APIs. Web Audio, in general, is a uni-directed graph of individual audio nodes. Connecting and changing their parameters, you could create effects pipeline or generate sound. That graph should have some input, in our case audio stream from the guitar signal.</p><p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/web-audio-graph.jpg" alt="Web Audio graph representation"></p><p>To produce any noise or sound out, the input should be connected to the output. Usually, it is a context destination &#x2013; the output device configured in the system. You can imagine it as a standard guitar stack. We have a guitar that could be connected to a line of stompboxes (guitar pedals), and at the end, you connect it to an amplifier or cabinet.</p><p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/guitar-stack.jpg" alt="Guitar stack schema"></p><p>Sometimes, for ease of use, it is helpful to draw a graph before implementing any complex effect.</p><p>Let&#x2019;s create the audio context, to do so we need to use a constructor that returns context:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AudioContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>The friend of mine <a href="https://twitter.com/thekiba_io" target="_blank" rel="nofollow noreferrer noopener">Reactive Fox</a> pointed me that you might have a problem with an audio context that created without any user interaction, ex. click. Browsers could set such context in a suspended state; you can read about it in details <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio" target="_blank" rel="nofollow noreferrer noopener">here</a>. To prevent such issues, you need to make sure that the context is in the active state using the following code:</p><pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">&apos;suspended&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Web Audio for Electric Guitar: How to Connect Instrument"><meta name="twitter:description" content="Want to connect your electric guitar in a browser using Web Audio API? This short tutorial shows how to do it! You will learn how to request audio access, convert it into an audio stream and control volume."><meta name="twitter:image" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-og.jpg"><meta name="twitter:image:alt" content="Web Audio for Electric Guitar: How to Connect Instrument"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="https://bobrov.dev/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="https://bobrov.dev/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="https://bobrov.dev/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="https://bobrov.dev/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="https://bobrov.dev/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.webp 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.jpg 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet.webp 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet.jpg 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile.webp 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile.jpg 1x, /images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument-mobile@2x.jpg 2x">
+      <img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/web-audio-for-electric-guitar-how-to-connect-instrument.jpg" loading="eager" alt="Web Audio for Electric Guitar: How to Connect Instrument" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  Web Audio for Electric Guitar: How to Connect Instrument
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2019-06-11" class="post-info__date">
+                      11 June 2019
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/guides" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Guides</span>
+                      </a>
+                      <a href="/category/web-audio" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Web Audio</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Web Audio for Electric Guitar: How to Connect Instrument" data-share-text="Web Audio for Electric Guitar: How to Connect Instrument by @bobrov1989" data-share-url="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>Modern Web becomes more and more powerful, especially with APIs giving developers access to hardware. One of such API – Web Audio. It gives you a set of low-level features to generate or process music right in your browser. Today I want to show you how to connect your electric guitar 🎸 (or any other electric instrument with wire connection, ex. bass) in a browser and control its volume level.</p>
+<p><em>This post is a part of “Web Audio for Electric Guitar” series, check out other posts as well!</em></p>
+<h3 class="post__series">Web Audio for Electric Guitar:</h3>
+<ol class="post__series"><li>How to Connect Instrument – Current</li>
+<li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-cabinet-emulation/">Cabinet Emulation</a></li>
+<li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion">Distortion</a></li>
+</ol>
+<p>I am playing a bunch of instruments, including some very unusual, like <a href="https://en.wikipedia.org/wiki/Bandura" target="_blank" rel="nofollow noreferrer noopener">bandura</a> 🤯, but my favorite one is a guitar. At my teenage years, I’ve used to play at punk-rock bands 🤘 at school and university. I’m not a professional guitarist, and it is just my hobby that helps to relax and clean my mind after work. Web Audio allowed me to combine programming and music, so I’ve started experimenting with it. The very first task to do that was how to connect my instrument to the laptop.</p>
+<p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/punk-rock-band.jpg" alt="Me playing punk rock at age of 16"></p>
+<h2>Hardware</h2>
+<p>Before writing any code, you need a few things: a laptop, an instrument (electric guitar in my case) and an audio interface. The last part is crucial. Of course, you can plug your instrument directly to the audio input of your computer, but it has a bunch of downsides. First, it might require an adapter. Usually, laptops have only 3.5mm jack, but 6.4mm cables used for instruments. Second, the quality of built-in audio cards is not usually suitable for playing music – in most cases, producers think that users use it for music, movies, and games. You should expect a high latency of an audio stream. Moreover, the last argument in favor of functional interface, that build-in solutions might be damaged on hard input levels. I did that when I was young 😱.</p>
+<p>Fortunately, you can buy a cheap and good-to-start device just for 20-25$. I’m using the most popular and quite cheap one – Behringer UCG-102 Guitar Link (this is not an advertisement!). It gives a low latency, has 6.4mm jack input and output, connects via USB and doesn’t require any particular setup to work on Mac (on Windows you might need to install <code>asio4all</code> driver to achieve good results). You can see it among my devices on the photo below.</p>
+<p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/web-audio-kit.jpg" alt="My Web Audio devices: Squier by Fender Mustang, Behringer UCG-102, MacBook Pro, cables, picks"></p>
+<p>You can buy something more fancy and better, but this audio interface is good to start with, you can always upgrade it if you ever need it.</p>
+<p>You need to connect your device to the computer, connect the instrument to the interface. Then you need to make sure that your system audio input and output setup is correct. You must select an external audio card as input and select built-in one as an output.</p>
+<p><em>Note: if you want to use Bluetooth headphones to play, I’d like to recommend to use an only wired connection, at least when I used Marshall MID the latency was so huge that I couldn’t play anything, they worked fine for me to listen to the music. It might be only my specific problem, but when trying to use Web Audio at first time try not to use wireless speakers or headphones, as they might add latency and make you think Web Audio API to be slow.</em></p>
+<h2>Web Audio Context</h2>
+<p>Before you request user audio input, you need to create a Web Audio context – the main point to create any nodes and work with APIs. Web Audio, in general, is a uni-directed graph of individual audio nodes. Connecting and changing their parameters, you could create effects pipeline or generate sound. That graph should have some input, in our case audio stream from the guitar signal.</p>
+<p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/web-audio-graph.jpg" alt="Web Audio graph representation"></p>
+<p>To produce any noise or sound out, the input should be connected to the output. Usually, it is a context destination – the output device configured in the system. You can imagine it as a standard guitar stack. We have a guitar that could be connected to a line of stompboxes (guitar pedals), and at the end, you connect it to an amplifier or cabinet.</p>
+<p class="js-lazy-load"><img src="/images/posts/web-audio-for-electric-guitar-how-to-connect-instrument/img/guitar-stack.jpg" alt="Guitar stack schema"></p>
+<p>Sometimes, for ease of use, it is helpful to draw a graph before implementing any complex effect.</p>
+<p>Let’s create the audio context, to do so we need to use a constructor that returns context:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AudioContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The friend of mine <a href="https://twitter.com/thekiba_io" target="_blank" rel="nofollow noreferrer noopener">Reactive Fox</a> pointed me that you might have a problem with an audio context that created without any user interaction, ex. click. Browsers could set such context in a suspended state; you can read about it in details <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#webaudio" target="_blank" rel="nofollow noreferrer noopener">here</a>. To prevent such issues, you need to make sure that the context is in the active state using the following code:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">'suspended'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">await</span> context<span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p><em>Side note: I&#x2019;ve used TypeScript while working with Web Audio and it saved me much time of searching through the documentation. It is not required to use TypeScript, but I can say it might make your life way easier.</em></p><h2>Request audio stream</h2><p>After we created an audio context, we are ready to request user input with <code>getUserMedia</code> API. In the past, this method was located on <code>navigator</code> object, but the specification was changed, and now it is on <code>navigator.mediaDevices</code>. Keep this in mind if you&#x2019;re going to support legacy browsers.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
+</code></pre>
+<p><em>Side note: I’ve used TypeScript while working with Web Audio and it saved me much time of searching through the documentation. It is not required to use TypeScript, but I can say it might make your life way easier.</em></p>
+<h2>Request audio stream</h2>
+<p>After we created an audio context, we are ready to request user input with <code>getUserMedia</code> API. In the past, this method was located on <code>navigator</code> object, but the specification was changed, and now it is on <code>navigator.mediaDevices</code>. Keep this in mind if you’re going to support legacy browsers.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
   <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>audio<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>By default, browsers might apply sound optimization to the stream &#x2013; echo cancellation, noise suppression, and auto gain control. Those optimizations are suitable for a microphone but not for a live instrument. To disable them, you need to pass an object with audio constraints instead of <code>true</code>:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
+</code></pre>
+<p>By default, browsers might apply sound optimization to the stream – echo cancellation, noise suppression, and auto gain control. Those optimizations are suitable for a microphone but not for a live instrument. To disable them, you need to pass an object with audio constraints instead of <code>true</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> stream <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>mediaDevices
   <span class="token punctuation">.</span><span class="token function">getUserMedia</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     audio<span class="token punctuation">:</span> <span class="token punctuation">{</span>
       echoCancellation<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
@@ -44,19 +287,26 @@
       latency<span class="token punctuation">:</span> <span class="token number">0</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>After the call of the method, the user will be asked for permission to allow audio input and output. You can request those permissions manually using <code>Permissions API</code>, but that feature is not fully supported right now. For now, you&#x2019;re allowed to check permission status and reset it.</p><pre class="language-js"><code class="language-js"><span class="token comment">// Getting permission status.</span>
-<span class="token keyword">const</span> micStatus <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>permissions<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&apos;microphone&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>After the call of the method, the user will be asked for permission to allow audio input and output. You can request those permissions manually using <code>Permissions API</code>, but that feature is not fully supported right now. For now, you’re allowed to check permission status and reset it.</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Getting permission status.</span>
+<span class="token keyword">const</span> micStatus <span class="token operator">=</span> <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>permissions<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'microphone'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>micStatus<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// state: &quot;prompt&quot;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>micStatus<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// state: "prompt"</span>
 
 <span class="token comment">// Reset permission to initial state.</span>
-<span class="token keyword">await</span> navigator<span class="token punctuation">.</span>permissions<span class="token punctuation">.</span><span class="token function">revoke</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&apos;microphone&apos;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p><em>Note: <code>getUserMedia</code> user media requires your app to be hosted via secure connection &#x2013; HTTPS. If your local or deployed app is running using HTTP, you might need to grant permissions using web site settings in a browser manually.</em></p><p>Ok, we requested an audio stream, what next? We need to create a media stream source and pass that stream to the audio context. However, to get any sound from the speakers, we must connect our source to destination node:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> lineInSource <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createMediaStreamSource</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> navigator<span class="token punctuation">.</span>permissions<span class="token punctuation">.</span><span class="token function">revoke</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'microphone'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><em>Note: <code>getUserMedia</code> user media requires your app to be hosted via secure connection – HTTPS. If your local or deployed app is running using HTTP, you might need to grant permissions using web site settings in a browser manually.</em></p>
+<p>Ok, we requested an audio stream, what next? We need to create a media stream source and pass that stream to the audio context. However, to get any sound from the speakers, we must connect our source to destination node:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> lineInSource <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createMediaStreamSource</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 lineInSource<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span>destination<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>And &#x1F941;&#x2026; now you should hear sound from the guitar in your browser &#x2013; congratulations &#x1F389;! Let&#x2019;s put it all together:</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AudioContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>And 🥁… now you should hear sound from the guitar in your browser – congratulations 🎉! Let’s put it all together:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AudioContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">&apos;suspended&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>state <span class="token operator">===</span> <span class="token string">'suspended'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">await</span> context<span class="token punctuation">.</span><span class="token function">resume</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -72,8 +322,13 @@ lineInSource<span class="token punctuation">.</span><span class="token function"
 <span class="token keyword">const</span> lineInSource <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">createMediaStreamSource</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 lineInSource<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span>destination<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>To disconnect your guitar, you need to call <code>disconnect</code> method on your source node:</p><pre class="language-js"><code class="language-js">lineInSource<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><h2>Volume control</h2><p>The last basic thing I want to show in this post &#x2013; volume control. Web Audio provides us with a gain node. It has only one parameter &#x2013; gain. This parameter accepts any numeric value. The zero gain means muted sound, 1 means normal, the same volume level. You could use values bigger than 1 to amplify original sound; for example, the value of 2 will boost volume in two times. You can create a gain node using a factory method on audio context or using constructor. The main difference between those methods that constructor allows you to pass initial configuration parameters, at the same time, you create an instance. Let&#x2019;s see it in code:</p><pre class="language-js"><code class="language-js"><span class="token comment">// Create a gain node and set the initial value to 0.5</span>
+</code></pre>
+<p>To disconnect your guitar, you need to call <code>disconnect</code> method on your source node:</p>
+<pre class="language-js"><code class="language-js">lineInSource<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>Volume control</h2>
+<p>The last basic thing I want to show in this post – volume control. Web Audio provides us with a gain node. It has only one parameter – gain. This parameter accepts any numeric value. The zero gain means muted sound, 1 means normal, the same volume level. You could use values bigger than 1 to amplify original sound; for example, the value of 2 will boost volume in two times. You can create a gain node using a factory method on audio context or using constructor. The main difference between those methods that constructor allows you to pass initial configuration parameters, at the same time, you create an instance. Let’s see it in code:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Create a gain node and set the initial value to 0.5</span>
 <span class="token comment">// that means that volume will be haft of the original.</span>
 <span class="token keyword">const</span> gainNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GainNode</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token punctuation">{</span>gain<span class="token punctuation">:</span> <span class="token number">0.5</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -85,22 +340,28 @@ lineInSource<span class="token punctuation">.</span><span class="token function"
 
 <span class="token comment">// Increasing volume.</span>
 gainNode<span class="token punctuation">.</span>gain<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-</code></pre><p>Few points to explain here, you can chain connect methods, as they are returning the node you connected to during the previous call. You can assign value to gain node, but you might notice clicking on value changes. Those &#x201C;clicks&#x201D; are artifacts of discrete gain changes. Fortunately, Web Audio nodes have a bunch of methods to set values smoothly:</p><pre class="language-js"><code class="language-js"><span class="token comment">// Setting target value (1st argument) starting from</span>
+</code></pre>
+<p>Few points to explain here, you can chain connect methods, as they are returning the node you connected to during the previous call. You can assign value to gain node, but you might notice clicking on value changes. Those “clicks” are artifacts of discrete gain changes. Fortunately, Web Audio nodes have a bunch of methods to set values smoothly:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Setting target value (1st argument) starting from</span>
 <span class="token comment">// the current time in 0.01 second period</span>
 gainNode<span class="token punctuation">.</span>gain<span class="token punctuation">.</span><span class="token function">setTargetAtTime</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> context<span class="token punctuation">.</span>currentTime<span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Doing the same but exponentially.</span>
 gainNode<span class="token punctuation">.</span>gain<span class="token punctuation">.</span><span class="token function">exponentialRampToValueAtTime</span><span class="token punctuation">(</span>gain<span class="token punctuation">,</span> context<span class="token punctuation">.</span>currentTime <span class="token operator">+</span> <span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>Using those methods, you will avoid sound glitches. To update a value of the volume in a user interface you need some control, the most suitable one for that purpose is a range input:</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
-    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>gain-control<span class="token punctuation">&quot;</span></span>
-    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>range<span class="token punctuation">&quot;</span></span>
-    <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0<span class="token punctuation">&quot;</span></span>
-    <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1<span class="token punctuation">&quot;</span></span>
-    <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0.01<span class="token punctuation">&quot;</span></span>
-    <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0.5<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
-</code></pre><p>You can listen to the changes in the input to update the gain value. Note, that you will need to validate (at least clamp) and parse the value, cause inputs value is always a string.</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> control <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.gain-control&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Using those methods, you will avoid sound glitches. To update a value of the volume in a user interface you need some control, the most suitable one for that purpose is a range input:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation"><</span>input</span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gain-control<span class="token punctuation">"</span></span>
+    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>range<span class="token punctuation">"</span></span>
+    <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+    <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+    <span class="token attr-name">step</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.01<span class="token punctuation">"</span></span>
+    <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</code></pre>
+<p>You can listen to the changes in the input to update the gain value. Note, that you will need to validate (at least clamp) and parse the value, cause inputs value is always a string.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> control <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.gain-control'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-control<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&apos;change&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+control<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> parsed <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> value <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token function">isNaN</span><span class="token punctuation">(</span>parsed<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token punctuation">:</span> parsed<span class="token punctuation">;</span>
   <span class="token keyword">const</span> clamped <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -111,4 +372,57 @@ control<span class="token punctuation">.</span><span class="token function">addE
 <span class="token keyword">function</span> <span class="token function">clamp</span><span class="token punctuation">(</span>min<span class="token punctuation">,</span> max<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> min<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><h2>Recap</h2><p>If you read that post to that point, you learned how to create an audio context, request media stream from a browser, connect it to the output, and control its volume. If you are playing guitar, you can check out the <a href="http://js-rocks.web.app" target="_blank" rel="nofollow noreferrer noopener">&#x201C;JS Rocks&#x201D;</a> Angular app I&#x2019;ve built. It has a bunch of ready-to-use cabinets and effects for electric guitar created with Web Audio. Moreover, it sounds well &#x1F60E;. Stay tuned in the <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-cabinet-emulation/">next post</a> I&#x2019;m going to show how to emulate a real guitar cabinet. Rock it with Web Audio &#x1F918;!</p></section></article><div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget"><div id="commento"></div></div></main><div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"><div class="mdl-snackbar__text"></div><button type="button" class="mdl-snackbar__action"></button></div><footer role="contentinfo" class="mdl-mini-footer page-footer"><section class="mdl-mini-footer--left-section page-footer__left-section"><a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#twitter"/></svg> Follow Vitalii Bobrov on Twitter </a><a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub"><svg class="mdl-mini-footer--social-btn__icon"><use xlink:href="/images/sprite.svg#github"/></svg> View Vitalii Bobrov profile on GitHub</a></section><section class="mdl-copyright"><p>&copy; 2020 Bobrov Dev</p></section><section class="mdl-mini-footer--right-section page-footer__right-section"></section></footer></div><div class="mdl-layout__obfuscator"></div></div><script src="/js/main.min.js" async defer></script><script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+</code></pre>
+<h2>Recap</h2>
+<p>If you read that post to that point, you learned how to create an audio context, request media stream from a browser, connect it to the output, and control its volume. If you are playing guitar, you can check out the <a href="http://js-rocks.web.app" target="_blank" rel="nofollow noreferrer noopener">“JS Rocks”</a> Angular app I’ve built. It has a bunch of ready-to-use cabinets and effects for electric guitar created with Web Audio. Moreover, it sounds well 😎. Stay tuned in the <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-cabinet-emulation/">next post</a> I’m going to show how to emulate a real guitar cabinet. Rock it with Web Audio 🤘!</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
