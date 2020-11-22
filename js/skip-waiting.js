@@ -1,1 +1,1 @@
-self.addEventListener("message",a=>{if(a.data)switch(a.data){case"skipWaiting":self.skipWaiting()}});
+self.addEventListener("message",(a=>{if(a.data)switch(a.data){case"skipWaiting":self.skipWaiting()}}));
