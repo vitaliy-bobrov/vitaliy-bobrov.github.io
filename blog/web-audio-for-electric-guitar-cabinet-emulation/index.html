@@ -1,10 +1,253 @@
-<html><head><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Web Audio for Electric Guitar: Cabinet Emulation"><meta name="twitter:description" content="Want to know how to emulate top brand guitar amp or cabinet playing on electric guitar in a web browser? Read how to use convolution and Web Audio API to get a great sound."><meta name="twitter:image" content="https://bobrov.dev/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-og.jpg"><meta name="twitter:image:alt" content="Web Audio for Electric Guitar: Cabinet Emulation"></head><body><p>It is hard to imagine a guitarist without any amplifier or guitar cabinet. Even more without any speakers, an electric guitar is hard to hear even at home. Today I want to show how to emulate guitar cabinet using Web Audio API. It is possible to recreate a sound made by top brand amp without the investment of thousands of dollars using convolution.</p>
-<p>In the <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/">previous post</a>, I described the process of getting sound from an electric guitar in a browser using Web Audio. Today I’m continuing that series with guitar cabinet emulation.</p>
+<!DOCTYPE html><html lang="en"><head>
+    <title>Web Audio for Electric Guitar: Cabinet Emulation | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Want to know how to emulate top brand guitar amp or cabinet playing on electric guitar in a web browser? Read how to use convolution and Web Audio API to get a great sound.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/" hreflang="en">
+    <link rel="canonical" href="http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Web Audio for Electric Guitar: Cabinet Emulation">
+    <meta property="og:description" content="Want to know how to emulate top brand guitar amp or cabinet playing on electric guitar in a web browser? Read how to use convolution and Web Audio API to get a great sound.">
+    <meta property="og:image" content="http://localhost:3000/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-og.jpg">
+    <meta property="og:image:url" content="http://localhost:3000/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": "True",
+        "headline": "Web Audio for Electric Guitar: Cabinet Emulation",
+        "image": [
+          "http://localhost:3000/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-og.jpg"
+        ],
+        "datePublished": "2019-06-17156072960000002:00:00+02",
+        "dateModified": "2019-07-17156332160000002:00:00+02",
+        "author": {
+          "@type": "Person",
+          "name": "Vitalii Bobrov"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bobrov Dev",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:3000/images/logo.png",
+            "width": "96",
+            "height": "96"
+          }
+        },
+        "description": "Want to know how to emulate top brand guitar amp or cabinet playing on electric guitar in a web browser? Read how to use convolution and Web Audio API to get a great sound."
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-90372372-1');
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="Web Audio for Electric Guitar: Cabinet Emulation"><meta name="twitter:description" content="Want to know how to emulate top brand guitar amp or cabinet playing on electric guitar in a web browser? Read how to use convolution and Web Audio API to get a great sound."><meta name="twitter:image" content="http://localhost:3000/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-og.jpg"><meta name="twitter:image:alt" content="Web Audio for Electric Guitar: Cabinet Emulation"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="http://localhost:3000/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="http://localhost:3000/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="http://localhost:3000/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="http://localhost:3000/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="http://localhost:3000/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="http://localhost:3000/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="http://localhost:3000/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="http://localhost:3000/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation.webp 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation.jpg 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-tablet.webp 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-tablet.jpg 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-mobile.webp 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-mobile.jpg 1x, /images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation-mobile@2x.jpg 2x">
+      <img src="/images/posts/web-audio-for-electric-guitar-cabinet-emulation/web-audio-for-electric-guitar-cabinet-emulation.jpg" loading="eager" alt="Web Audio for Electric Guitar: Cabinet Emulation" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  Web Audio for Electric Guitar: Cabinet Emulation
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2019-06-17" class="post-info__date">
+                      17 June 2019
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/guides" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Guides</span>
+                      </a>
+                      <a href="/category/web-audio" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Web Audio</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="Web Audio for Electric Guitar: Cabinet Emulation" data-share-text="Web Audio for Electric Guitar: Cabinet Emulation by @bobrov1989" data-share-url="http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=http://localhost:3000/blog/web-audio-for-electric-guitar-cabinet-emulation/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>It is hard to imagine a guitarist without any amplifier or guitar cabinet. Even more without any speakers, an electric guitar is hard to hear even at home. Today I want to show how to emulate guitar cabinet using Web Audio API. It is possible to recreate a sound made by top brand amp without the investment of thousands of dollars using convolution.</p>
+<p>In the <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" target="_blank" rel="nofollow noreferrer noopener">previous post</a>, I described the process of getting sound from an electric guitar in a browser using Web Audio. Today I’m continuing that series with guitar cabinet emulation.</p>
 <p><em>This post is a part of “Web Audio for Electric Guitar” series, check out other posts as well!</em></p>
 <h3 class="post__series">Web Audio for Electric Guitar Series:</h3>
-<ol class="post__series"><li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/">How to Connect Instrument</a></li>
+<ol class="post__series"><li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-how-to-connect-instrument/" target="_blank" rel="nofollow noreferrer noopener">How to Connect Instrument</a></li>
 <li>Cabinet Emulation – Current</li>
-<li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion">Distortion</a></li>
+<li><a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion" target="_blank" rel="nofollow noreferrer noopener">Distortion</a></li>
 </ol>
 <p>While playing on electric guitar at home, it usually connected to an individual device – amplifier or head with a cabinet. There are a lot of famous amp producers, and each of them has its own “firm” sound. However, using digital sound processing, it is possible to emulate them programmatically using a process called <em>convolution</em>. For simplicity, you can imagine convolution as a multiplication of two functions. When we are speaking about sound convolution mean the application of some sample to the live input. To simulate a guitar cabinet, we need to apply such a short sample recorded from real device to guitar sound. That samples called <em>impulse response</em> (IR).</p>
 <h2>Impulse Response</h2>
@@ -102,8 +345,58 @@ midNode<span class="token punctuation">.</span>gain<span class="token punctuatio
 </code></pre>
 <p>I’ve recorded an example video showing how convolution affects the output sound. It might not have a significant impact on a clean signal, but if some distortion effect applied, it is much more noticeable.</p>
 <p></p><div class="remarkable-youtube-wrapper">
-    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/0KK6D2h7RgU?origin=https://bobrov.dev/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/0KK6D2h7RgU?origin=http://localhost:3000/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
   </div><p></p>
 <h2>Recap</h2>
-<p>If you read that post to that point, you learned how to emulate a guitar amp using convolution, and create a three-band equalizer to configure tone. If you are playing guitar, you can check out the <a href="http://js-rocks.web.app" target="_blank" rel="nofollow noreferrer noopener">“JS Rocks”</a> Angular app I’ve built. It has 9‼️ of ready-to-use cabinets and  7 effects for electric guitar created with Web Audio. Moreover, it sounds well 😎. Stay tuned in the next post I’m going to make a deep dive into <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion">distortion effects</a>. Rock it with Web Audio 🤘!</p>
-<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+<p>If you read that post to that point, you learned how to emulate a guitar amp using convolution, and create a three-band equalizer to configure tone. If you are playing guitar, you can check out the <a href="http://js-rocks.web.app" target="_blank" rel="nofollow noreferrer noopener">“JS Rocks”</a> Angular app I’ve built. It has 9‼️ of ready-to-use cabinets and  7 effects for electric guitar created with Web Audio. Moreover, it sounds well 😎. Stay tuned in the next post I’m going to make a deep dive into <a href="https://bobrov.dev/blog/web-audio-for-electric-guitar-distortion" target="_blank" rel="nofollow noreferrer noopener">distortion effects</a>. Rock it with Web Audio 🤘!</p>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="http://localhost:3000/css/commento.css"></script></body></html>

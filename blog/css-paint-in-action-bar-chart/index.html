@@ -1,4 +1,247 @@
-<html><head><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="CSS Paint in Action: Bar Chart"><meta name="twitter:description" content="We are going to create data visualizations that could be used in production projects -- bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface."><meta name="twitter:image" content="https://bobrov.dev/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-og.jpg"><meta name="twitter:image:alt" content="CSS Paint in Action: Bar Chart"></head><body><p>In my <a href="/blog/exploring-the-css-paint-api/">previous article</a>, we discovered CSS Paint API basics. Today, with this knowledge arsenal we are going to create data visualizations that could be used in production projects – bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface.</p>
+<!DOCTYPE html><html lang="en"><head>
+    <title>CSS Paint in Action: Bar Chart | Bobrov Dev</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="We are going to create data visualizations that could be used in production projects -- bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="alternate" href="http://localhost:3000/blog/css-paint-in-action-bar-chart/" hreflang="en">
+    <link rel="canonical" href="http://localhost:3000/blog/css-paint-in-action-bar-chart/">
+    
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Bobrov Dev">
+    
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Bobrov Dev">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileColor" content="#008ba3">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+    
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#008ba3">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="google-site-verification" content="-49tfdke4pxwhrBhLHu5VHTk-bb7g9jK_xQuD5Elq2Y">
+    
+    <!-- Preloads -->
+    <link rel="preload" as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta property="fb:app_id" content="393821434298248">
+    <meta property="article:author" content="https://www.facebook.com/bobrov1989">
+    <meta property="og:url" content="http://localhost:3000/blog/css-paint-in-action-bar-chart/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS Paint in Action: Bar Chart">
+    <meta property="og:description" content="We are going to create data visualizations that could be used in production projects -- bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface.">
+    <meta property="og:image" content="http://localhost:3000/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-og.jpg">
+    <meta property="og:image:url" content="http://localhost:3000/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": "True",
+        "headline": "CSS Paint in Action: Bar Chart",
+        "image": [
+          "http://localhost:3000/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-og.jpg"
+        ],
+        "datePublished": "2018-04-13152357760000002:00:00+02",
+        "dateModified": "2018-11-07154154880000001:00:00+01",
+        "author": {
+          "@type": "Person",
+          "name": "Vitalii Bobrov"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bobrov Dev",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:3000/images/logo.png",
+            "width": "96",
+            "height": "96"
+          }
+        },
+        "description": "We are going to create data visualizations that could be used in production projects -- bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface."
+      }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90372372-1"></script>
+    <script>
+      if (navigator.doNotTrack !== '1') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-90372372-1');
+      }
+    </script>
+    
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@bobrov1989"><meta name="twitter:title" content="CSS Paint in Action: Bar Chart"><meta name="twitter:description" content="We are going to create data visualizations that could be used in production projects -- bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface."><meta name="twitter:image" content="http://localhost:3000/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-og.jpg"><meta name="twitter:image:alt" content="CSS Paint in Action: Bar Chart"></head>
+  <body class="mdlext-dark-color-theme mdl-layout__container">
+    <div class="mdl-layout mdl-layout--no-desktop-drawer-button mdl-layout--fixed-header mdl-js-layout">
+      <!-- Header -->
+      <header class="mdl-layout__header is-casting-shadow" role="banner">
+        <div class="mdl-layout__drawer-button" role="button" tabindex="0" aria-expanded="false">
+          <svg class="mdl-svg drawer-icon">
+            <use href="/images/sprite.svg#menu"/>
+          </svg>
+          Menu
+        </div>
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">
+            <a class="site-link" href="http://localhost:3000/" rel="nofollow">Bobrov Dev</a>
+          </span>
+      
+          <div class="mdl-layout-spacer">
+            <a href="http://localhost:3000/" class="site-logo" title="Bobrov Dev" rel="nofollow">
+              <picture class="site-logo__picture">
+                <source media="(min-width: 1025px)" srcset="/images/logo.webp 1x, /images/logo@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 1025px)" srcset="/images/logo.png 1x, /images/logo@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.webp 1x, /images/logo-tablet@2x.webp 2x" type="image/webp">
+                <source media="(min-width: 768px)" srcset="/images/logo-tablet.png 1x, /images/logo-tablet@2x.png 2x">
+                <source srcset="/images/logo-mobile.webp 1x, /images/logo-mobile@2x.webp 2x" type="image/webp">
+                <source srcset="/images/logo-mobile.png 1x, /images/logo-mobile@2x.png 2x">
+                <img src="/images/logo.png" alt="Bobrov Dev Logo" loading="eager" class="site-logo__img">
+              </picture>
+            </a>
+          </div>
+      
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only" aria-label="Main navigation">
+            <a class="mdl-navigation__link mdl-navigation__link_active" href="http://localhost:3000/" rel="nofollow">Blog</a>
+      
+              <a class="mdl-navigation__link " href="http://localhost:3000/speaker/">Speaker
+              </a>
+              <a class="mdl-navigation__link " href="http://localhost:3000/about/">About
+              </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Bobrov Dev</span>
+        <nav class="mdl-navigation" aria-label="Main navigation">
+          <a class="mdl-navigation__link mdl-navigation__link_active" href="http://localhost:3000/" rel="nofollow" aria-current="page">Blog</a>
+      
+            <a class="mdl-navigation__link " href="http://localhost:3000/speaker/">Speaker
+            </a>
+            <a class="mdl-navigation__link " href="http://localhost:3000/about/">About
+            </a>
+      
+          <button class="mdl-button mdl-button--raised js-add-to-home" disabled>
+            Add to home screen
+          </button>
+        </nav>
+      </div>
+
+      <!-- Content -->
+      <div class="mdl-layout__content js-lazy-container">
+        <main class="mdl-grid posts-grid">
+          <article class="mdl-card mdl-shadow--3dp mdl-cell post mdl-cell--12-col">
+            <header class="mdl-card__media post__media">
+                
+    <picture class="safe-picture ">
+      <source media="(min-width: 1025px)" srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart.webp 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 1025px)" srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart.jpg 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart@2x.jpg 2x">
+      <source media="(min-width: 768px)" srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-tablet.webp 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-tablet@2x.webp 2x" type="image/webp">
+      <source media="(min-width: 768px)" srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-tablet.jpg 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-tablet@2x.jpg 2x">
+      <source srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-mobile.webp 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-mobile@2x.webp 2x" type="image/webp">
+      <source srcset="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-mobile.jpg 1x, /images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart-mobile@2x.jpg 2x">
+      <img src="/images/posts/css-paint-in-action-bar-chart/css-paint-in-action-bar-chart.jpg" loading="eager" alt="CSS Paint in Action: Bar Chart" class="safe-picture__img">
+    </picture>
+
+                <div class="safe-gradient"></div>
+
+                <h1 class="post__title">
+                  CSS Paint in Action: Bar Chart
+                </h1>
+              </header>
+
+              <section class="post__info post-info">
+                <div class="post-info__data">
+                  <picture class="post-info__avatar">
+                    <source srcset="/images/authors/bobrov/avatar.webp 1x, /images/authors/bobrov/avatar@2x.webp 2x" type="image/webp">
+                    <source srcset="/images/authors/bobrov/avatar.jpg 1x, /images/authors/bobrov/avatar@2x.jpg 2x">
+                    <img src="/images/authors/bobrov/avatar.jpg" loading="lazy" alt="Vitalii Bobrov Photo" class="mdl-list__item-avatar">
+                  </picture>
+
+                  <div class="post-info__data-wrapper">
+                    <div class="post-info__author">
+                      Vitalii Bobrov
+                    </div>
+
+                    <time datetime="2018-04-13" class="post-info__date">
+                      13 April 2018
+                    </time>
+                  </div>
+                </div>
+
+                <div class="post-info__side">
+                  <div class="post-info__categories">
+                      <a href="/category/css" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">CSS</span>
+                      </a>
+                      <a href="/category/houdini" class="mdl-chip post-info__category">
+                          <span class="mdl-chip__text">Houdini</span>
+                      </a>
+                  </div>
+                </div>
+              </section>
+
+              
+    <div class="mdl-card__menu post-share">
+      <button id="share-menu-0" class="mdl-button mdl-button--icon ripple post-share__button js-share-btn" title="Share this post" aria-label="Share this post" data-share-title="CSS Paint in Action: Bar Chart" data-share-text="CSS Paint in Action: Bar Chart by @bobrov1989" data-share-url="http://localhost:3000/blog/css-paint-in-action-bar-chart/">
+        <span class="ripple-ink"></span>
+        <svg class="mdl-svg post-share__icon">
+          <use href="/images/sprite.svg#share"/>
+        </svg>
+        Share post
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu share-menu js-share-menu">
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://www.facebook.com/sharer.php?u=http://localhost:3000/blog/css-paint-in-action-bar-chart/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#facebook"/>
+            </svg>
+            Facebook
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://twitter.com/home?status=http://localhost:3000/blog/css-paint-in-action-bar-chart/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#twitter"/>
+            </svg>
+            Twitter
+          </a>
+        </li>
+        <li class="mdl-menu__item share-menu__item">
+          <a href="https://linkedin.com/shareArticle?url=http://localhost:3000/blog/css-paint-in-action-bar-chart/" class="share-menu__link" target="_blank" rel="nofollow noreferrer noopener">
+            <svg class="share-menu__icon">
+              <use href="/images/sprite.svg#linkedin"/>
+            </svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+
+              <section class="post__contents">
+                <p>In my <a href="/blog/exploring-the-css-paint-api/">previous article</a>, we discovered CSS Paint API basics. Today, with this knowledge arsenal we are going to create data visualizations that could be used in production projects – bar chart. More than 65% of humans are visual learners. Visualization makes it easier to understand, compare, and analyze data. Using CSS Paint API, we can encapsulate all logic related to drawing charts on canvas and expose the high-level declarative interface.</p>
 <p>The most uncomplicated graph we can create is a bar chart 📊. It is the set of rectangles, possibly with a different background color, and the size of each box represents its value compared to the others. Usually, the maximum dataset value is taken as 100% on the target axis. So in our example, we will use the range from zero to the maximum amount of the given dataset for values axis, as in 90% cases this is what we need to implement. On the secondary axis, we will linearly distribute our bars and separate them with the gap in pixels specified by the passed argument.</p>
 <p>To create a custom painter we need to follow three easy steps: declare a custom paint class, register paint, and load worklet. So let’s start with the painter class definition:</p>
 <pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">BarChartPainter</span> <span class="token punctuation">{</span>
@@ -339,9 +582,9 @@ The syntax provided is not a valid custom property syntax<span class="token punc
 <span class="token punctuation">}</span>
 </code></pre>
 <p></p><div class="remarkable-youtube-wrapper">
-    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/dn1bwJPQY5I?origin=https://bobrov.dev/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/dn1bwJPQY5I?origin=http://localhost:3000/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
   </div><p></p>
-<p>As usual you can check <a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar" target="_blank" rel="nofollow noreferrer noopener">code</a> and <a href="https://bobrov.dev/css-paint-demos/bar/">demo</a>.</p>
+<p>As usual you can check <a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar" target="_blank" rel="nofollow noreferrer noopener">code</a> and <a href="https://bobrov.dev/css-paint-demos/bar/" target="_blank" rel="nofollow noreferrer noopener">demo</a>.</p>
 <h2>Change the input format</h2>
 <p>After thinking for some time, I decided to change the dataset input using "JS in CSS". Yes, you read it correctly, I want to use JavaScript inside CSS. As I said before, our worklet code is executed in a secure and separate context and in this case, it is completely fine to use some JS as a CSS variable value. Then I’m going to parse this value in a custom painter using <code>JSON.parse</code>. Let’s look at stylesheet first:</p>
 <pre class="language-css"><code class="language-css"><span class="token selector"><span class="token class">.bars</span> </span><span class="token punctuation">{</span>
@@ -414,9 +657,9 @@ The syntax provided is not a valid custom property syntax<span class="token punc
 <span class="token punctuation">}</span>
 </code></pre>
 <p></p><div class="remarkable-youtube-wrapper">
-    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/toWY6fmpmQg?origin=https://bobrov.dev/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/toWY6fmpmQg?origin=http://localhost:3000/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
   </div><p></p>
-<p><a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar-js-in-css" target="_blank" rel="nofollow noreferrer noopener">Code</a> and <a href="https://bobrov.dev/css-paint-demos/bar-js-in-css/">demo</a>.</p>
+<p><a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar-js-in-css" target="_blank" rel="nofollow noreferrer noopener">Code</a> and <a href="https://bobrov.dev/css-paint-demos/bar-js-in-css/" target="_blank" rel="nofollow noreferrer noopener">demo</a>.</p>
 <p>Now let’s try to animate the dataset in JavaScript:</p>
 <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.bars'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> style <span class="token operator">=</span> <span class="token function">getComputedStyle</span><span class="token punctuation">(</span>canvas<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -476,10 +719,60 @@ canvas<span class="token punctuation">.</span><span class="token function">addEv
 </code></pre>
 <p>So using <code>requestAnimationFrame</code> on mouse enter I animated the dataset from the initial value to the random data set and in opposite direction on mouse leave. Also, I’ve added the <code>--bar-max</code> variable to set the range for the main axis from zero to this value.</p>
 <p></p><div class="remarkable-youtube-wrapper">
-    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/kUgWZsoyjqU?origin=https://bobrov.dev/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+    <iframe class="remarkable-youtube js-lazy-load" data-src="https://www.youtube.com/embed/kUgWZsoyjqU?origin=http://localhost:3000/&rel=0" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
   </div><p></p>
-<p><a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar-animate" target="_blank" rel="nofollow noreferrer noopener">Code</a> and <a href="https://bobrov.dev/css-paint-demos/bar-animate/">demo</a>.</p>
+<p><a href="https://github.com/vitaliy-bobrov/css-paint-demos/tree/master/src/bar-animate" target="_blank" rel="nofollow noreferrer noopener">Code</a> and <a href="https://bobrov.dev/css-paint-demos/bar-animate/" target="_blank" rel="nofollow noreferrer noopener">demo</a>.</p>
 <p>After all, I’ve tried to go further and fetch the JSON file with the custom property of <code><url></url></code> or <code><img></code> type. URL type doesn’t seem to work, it just got the string value from it. Such resource fetched exclusively when used as a value for properties accepting URLs. The image appears to work but doesn’t parse the JSON data as it has only mime types related to image formats in request headers.</p>
 <h2>Recap</h2>
 <p>Today we implemented a basic bar chart, then extend its functionality, tried to use JavaScript in CSS and animate data with <code>requestAnimationFrame</code>. I hope this was awesome, and as I still experimenting with Houdini APIs more exciting posts will come 😎. Let’s keep in touch 🤟!</p>
-<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="https://bobrov.dev/css/commento.css"></script></body></html>
+
+              </section>
+          </article>
+
+            <div class="mdl-card mdl-shadow--3dp mdl-cell mdl-cell--12-col comments-widget">
+              <div id="commento"></div>
+            </div>
+
+        </main>
+
+        <!-- Snackbar -->
+        <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+          <div class="mdl-snackbar__text"></div>
+          <button type="button" class="mdl-snackbar__action"></button>
+        </div>
+
+        <!-- Footer -->
+        <footer role="contentinfo" class="mdl-mini-footer page-footer">
+          <section class="mdl-mini-footer--left-section page-footer__left-section">
+            <a href="https://twitter.com/bobrov1989" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="Twitter">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#twitter"/>
+              </svg>
+              Follow Vitalii Bobrov on Twitter
+            </a>
+        
+            <a href="https://github.com/vitaliy-bobrov" target="_blank" rel="nofollow noreferrer noopener" class="mdl-mini-footer--social-btn" title="GitHub">
+              <svg class="mdl-mini-footer--social-btn__icon">
+                <use href="/images/sprite.svg#github"/>
+              </svg>
+              View Vitalii Bobrov profile on GitHub
+            </a>
+          </section>
+        
+          <section class="mdl-copyright">
+            <p>© 2020 Bobrov Dev</p>
+          </section>
+        
+          <section class="mdl-mini-footer--right-section page-footer__right-section">
+          </section>
+        </footer>
+      </div>
+
+      <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/main.min.js" async defer></script>
+  
+
+<script defer src="https://cdn.commento.io/js/commento.js" data-css-override="http://localhost:3000/css/commento.css"></script></body></html>
